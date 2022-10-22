@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 16:33:24 by iouardi           #+#    #+#             */
-/*   Updated: 2022/10/21 17:17:34 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/10/22 22:55:02 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,13 @@
 
 #include "Contact.hpp"
 
-
 class   PhoneBook {
-    private :
-        int     contacts[8];
+	private :
+		Contact contacts[8];
+	public :
+		~PhoneBook();
+		void	addContact();
+		Contact	getContact(int i);
 };
 
 #endif
