@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 18:01:45 by iouardi           #+#    #+#             */
-/*   Updated: 2022/10/23 00:05:06 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/10/23 12:49:15 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,49 @@ Contact	PhoneBook::getContact(int i)
 	return (contacts[i]);
 }
 
+PhoneBook::PhoneBook()
+{
+	i = 0;
+}
+
 void    PhoneBook::addContact()
 {
 	std::string str;
-	int			i = 0;
-	
-	std::cout << "Please enter the first name" << std::endl;
-	do {
+
+	if (i == 8)
+		i = 0;
+	do {	
+		std::cout << "Please enter the first name" << std::endl;
 		std::getline(std::cin, str);
-	} while (str ==  "\n");
+	} while (str.empty() || str == "");
 	contacts[i].setFirstName(str);
-	std::cout << "Please enter the last name" << std::endl;
+	do {
+		std::cout << "Please enter the last name" << std::endl;
 		std::getline(std::cin, str);
+	} while(str.empty() || str == "");
 	contacts[i].setLastName(str);
-	std::cout << "Please enter the nickname" << std::endl;
-	std::getline(std::cin, str);
+	do {
+		std::cout << "Please enter the nickname" << std::endl;
+		std::getline(std::cin, str);
+	} while(str.empty() || str == "");
 	contacts[i].setNickName(str);
-	std::cout << "Please enter the phone number" << std::endl;
-	std::getline(std::cin, str);
+	do {
+		std::cout << "Please enter the phone number" << std::endl;
+		std::getline(std::cin, str);
+	} while(str.empty() || str == "");
 	contacts[i].setPhoneNumber(str);
-	std::cout << "Please enter the darkest secret" << std::endl;
-	std::getline(std::cin, str);
+	do {
+		std::cout << "Please enter the darkest secret" << std::endl;
+		std::getline(std::cin, str);
+	} while(str.empty() || str == "");
 	contacts[i].setDarkestSecret(str);
 	i++;
+}
+
+void	PhoneBook::searchContact()
+{
+	int		i = 0;
+	std::cout << "index     /first name/last name /nickname  " << std::endl;
+	std::cout << std::setw(10);
+	std::cout << i << "/" << std::setw(10) << getContact(i).getFirstName() << "/" << std::endl;
 }

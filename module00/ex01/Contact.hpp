@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 17:14:49 by iouardi           #+#    #+#             */
-/*   Updated: 2022/10/22 23:20:19 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/10/23 12:45:07 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define CONTACT_HPP
 
 #include  <iostream>
+#include <iomanip>  
 #include <string>
 
 class   Contact {
