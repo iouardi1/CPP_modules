@@ -6,17 +6,16 @@
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 15:23:30 by iouardi           #+#    #+#              #
-#    Updated: 2022/10/23 23:50:26 by iouardi          ###   ########.fr        #
+#    Updated: 2022/10/23 23:55:43 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= 			PhoneBook
+NAME= 			Account
 
 FLAGS=			-Wall -Werror -Wextra -std=c++98
 CC=				c++
-SRC_FILES=		Contact.cpp \
-				main.cpp \
-				PhoneBook.cpp
+SRC_FILES=		Account.cpp \
+				tests.cpp
 
 OBJ_FILES=			$(SRC_FILES:.cpp=.o)
 
