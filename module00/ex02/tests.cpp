@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 23:59:30 by iouardi           #+#    #+#             */
-/*   Updated: 2022/10/23 23:59:41 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/10/24 21:38:27 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <algorithm>
 #include <functional>
 #include "Account.hpp"
-
 
 int		main( void ) {
 

@@ -6,23 +6,24 @@
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 15:23:30 by iouardi           #+#    #+#              #
-#    Updated: 2022/10/23 23:50:26 by iouardi          ###   ########.fr        #
+#    Updated: 2022/10/25 03:31:38 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= 			PhoneBook
-
 FLAGS=			-Wall -Werror -Wextra -std=c++98
 CC=				c++
 SRC_FILES=		Contact.cpp \
 				main.cpp \
 				PhoneBook.cpp
+HEADER_FILES=	Contact.hpp \
+				PhoneBook.hpp
 
 OBJ_FILES=			$(SRC_FILES:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ_FILES)
+$(NAME): $(OBJ_FILES) $(HEADER_FILES)
 	$(CC) $(FLAGS) $(OBJ_FILES) -o $(NAME)
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
