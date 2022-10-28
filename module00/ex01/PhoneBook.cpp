@@ -84,21 +84,29 @@ void	PhoneBook::searchContact()
 	int			j;
 	std::string	index;
 
-	std::cout << "     index|first name| last name|  nickname" << std::endl;
+
+	std::cout << std::setw(10) << "index";
+	std::cout << "|";
+	std::cout << std::setw(10) << "first name";
+	std::cout << "|";
+	std::cout << std::setw(10) << "last name";
+	std::cout << "|";
+	std::cout << std::setw(10) << "nickname";
+	std::cout << "|" << std::endl;
 	while (i < 8 && !getContact(i).getFirstName().empty())
 	{	
 		std::cout << std::setw(10) << i << "|";
-		if (getContact(i).getFirstName().length() >= 10)
+		if (getContact(i).getFirstName().length() > 10)
 			std::cout << getContact(i).getFirstName().substr(0, 9) + ".";
 		else
 			std::cout << std::setw(10) << getContact(i).getFirstName();
 		std::cout << "|";
-		if (getContact(i).getLastName().length() >= 10)
+		if (getContact(i).getLastName().length() > 10)
 			std::cout << getContact(i).getLastName().substr(0, 9) + ".";
 		else
 			std::cout << std::setw(10) << getContact(i).getLastName();
 		std::cout << "|";
-		if (getContact(i).getNickName().length() >= 10)
+		if (getContact(i).getNickName().length() > 10)
 			std::cout << getContact(i).getNickName().substr(0, 9) + "." << std::endl;
 		else
 			std::cout << std::setw(10) << getContact(i).getNickName() << std::endl;
