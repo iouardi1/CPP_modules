@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/27 22:22:06 by iouardi           #+#    #+#              #
-#    Updated: 2022/10/28 20:54:24 by iouardi          ###   ########.fr        #
+#    Created: 2022/10/28 21:08:26 by iouardi           #+#    #+#              #
+#    Updated: 2022/10/28 21:08:59 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,7 @@ NAME= 			Zombie
 
 FLAGS=			-Wall -Werror -Wextra -std=c++98
 CC=				c++
-SRC_FILES=		newZombie.cpp \
-				randomChump.cpp \
+SRC_FILES=		zombieHorde.cpp \
 				Zombie.cpp \
 				main.cpp
 HEADER_FILES=	Zombie.hpp

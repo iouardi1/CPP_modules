@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:40:38 by iouardi           #+#    #+#             */
-/*   Updated: 2022/10/28 18:44:38 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/10/28 21:06:00 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 int main()
 {
-	Zombie          zombiie;
-	Zombie         *zombiiie;
-	std::string     str;
+	Zombie			*zombiie;
+	std::string		str;
 	
 	std::cout << "enter a name" << std::endl;
-	std::cin >> str;
-	// zombiie.setZombieName(str);
-	// zombiie.announce();
-	zombiiie = newZombie(str);
-	std::cout << (*zombiiie).getZombieName();
+	std::getline(std::cin, str);
+	zombiie = newZombie(str);
+	std::cout << (*zombiie).getZombieName() << std::endl;
+	randomChump(str);
+	zombiie->~Zombie();
 }
