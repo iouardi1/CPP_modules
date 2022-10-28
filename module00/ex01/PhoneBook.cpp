@@ -43,26 +43,36 @@ void    PhoneBook::addContact()
 	do {	
 		std::cout << "Please enter the first name" << std::endl;
 		std::getline(std::cin, str);
+		if (std::cin.eof())
+			exit (0);
 	} while (str.empty() || str == "");
 	contacts[i].setFirstName(str);
 	do {
 		std::cout << "Please enter the last name" << std::endl;
 		std::getline(std::cin, str);
+		if (std::cin.eof())
+			exit (0);
 	} while(str.empty() || str == "");
 	contacts[i].setLastName(str);
 	do {
 		std::cout << "Please enter the nickname" << std::endl;
 		std::getline(std::cin, str);
+		if (std::cin.eof())
+			exit (0);
 	} while(str.empty() || str == "");
 	contacts[i].setNickName(str);
 	do {
 		std::cout << "Please enter the phone number" << std::endl;
 		std::getline(std::cin, str);
+		if (std::cin.eof())
+			exit (0);
 	} while(str.empty() || str == "" || !checkStrIsdigit(str));
 	contacts[i].setPhoneNumber(str);
 	do {
 		std::cout << "Please enter the darkest secret" << std::endl;
 		std::getline(std::cin, str);
+		if (std::cin.eof())
+			exit (0);
 	} while(str.empty() || str == "");
 	contacts[i].setDarkestSecret(str);
 	i++;
@@ -100,12 +110,14 @@ void	PhoneBook::searchContact()
 	{
 		std::cout << "Please enter the index you want" << std::endl;
 		std::getline(std::cin, index);
-		if (index == "" || index.length() >= 2 || !checkStrIsdigit(index) || std::stoi(index) >= i)
+		if (std::cin.eof())
+			exit (0);
+		if (index == "" || !checkStrIsdigit(index) || atol(index.c_str()) >= i)
 			std::cout << "wrong index" << std::endl;
 		else if (std::stoi(index) < 0 || std::stoi(index) > 7)
 			std::cout << "wrong index" << std::endl;
-	}	while (index == "" || !checkStrIsdigit(index) || index.length() >= 2 || std::stoi(index) >= i);
-	j = std::stoi(index);
+	}	while (index == "" || !checkStrIsdigit(index) || atol(index.c_str()) >= i);
+	j = atol(index.c_str());
 	std::cout << "First name     : " << getContact(j).getFirstName() << std::endl;
 	std::cout << "Last name      : " << getContact(j).getLastName() << std::endl;
 	std::cout << "Nickname       : " << getContact(j).getNickName() << std::endl;
