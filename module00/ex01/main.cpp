@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 17:36:02 by iouardi           #+#    #+#             */
-/*   Updated: 2022/10/25 03:27:53 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/10/28 12:04:38 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ int main()
 			phoneBook.addContact();
 		else if (input.length() == 6 && input == "SEARCH")
 			phoneBook.searchContact();
+		else if (input == "")
+			break ;
 		else if (input != "EXIT")
 			std::cout << "wrong command :(" << std::endl;
-		}	while (input != "EXIT");
+		}	while (input != "EXIT" || input == "\0");
 	return (0);
 }

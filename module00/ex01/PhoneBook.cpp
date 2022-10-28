@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 18:01:45 by iouardi           #+#    #+#             */
-/*   Updated: 2022/10/25 05:36:29 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/10/28 11:26:44 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,15 +94,17 @@ void	PhoneBook::searchContact()
 			std::cout << std::setw(10) << getContact(i).getNickName() << std::endl;
 		i++;
 	}
+	if (i == 0)
+		return ;
 	do
 	{
 		std::cout << "Please enter the index you want" << std::endl;
 		std::getline(std::cin, index);
-		if (index.length() >= 2 || !checkStrIsdigit(index) || std::stoi(index) >= i)
+		if (index == "" || index.length() >= 2 || !checkStrIsdigit(index) || std::stoi(index) >= i)
 			std::cout << "wrong index" << std::endl;
 		else if (std::stoi(index) < 0 || std::stoi(index) > 7)
 			std::cout << "wrong index" << std::endl;
-	}	while (!checkStrIsdigit(index) || index.length() >= 2 || std::stoi(index) >= i);
+	}	while (index == "" || !checkStrIsdigit(index) || index.length() >= 2 || std::stoi(index) >= i);
 	j = std::stoi(index);
 	std::cout << "First name     : " << getContact(j).getFirstName() << std::endl;
 	std::cout << "Last name      : " << getContact(j).getLastName() << std::endl;
@@ -110,4 +112,3 @@ void	PhoneBook::searchContact()
 	std::cout << "Phone number   : " << getContact(j).getPhoneNumber() << std::endl;
 	std::cout << "Darkest secret : " << getContact(j).getDarkestSecret() << std::endl;
 }
-

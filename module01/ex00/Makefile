@@ -5,25 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/11 15:23:30 by iouardi           #+#    #+#              #
-#    Updated: 2022/10/28 11:50:58 by iouardi          ###   ########.fr        #
+#    Created: 2022/10/27 22:22:06 by iouardi           #+#    #+#              #
+#    Updated: 2022/10/27 22:22:08 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= 			PhoneBook
-FLAGS=			-Wall -Werror -Wextra -std=c++98 -pedantic
+NAME= 			megaphone
+
+FLAGS=			-Wall -Werror -Wextra -std=c++98
 CC=				c++
-SRC_FILES=		Contact.cpp \
-				main.cpp \
-				PhoneBook.cpp
-HEADER_FILES=	Contact.hpp \
-				PhoneBook.hpp
+SRC_FILES=		megaphone.cpp
 
 OBJ_FILES=			$(SRC_FILES:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ_FILES) $(HEADER_FILES)
+$(NAME): $(OBJ_FILES)
 	$(CC) $(FLAGS) $(OBJ_FILES) -o $(NAME)
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
