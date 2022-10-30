@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/28 21:08:26 by iouardi           #+#    #+#              #
-#    Updated: 2022/10/29 11:09:51 by iouardi          ###   ########.fr        #
+#    Created: 2022/10/29 12:19:55 by iouardi           #+#    #+#              #
+#    Updated: 2022/10/30 17:10:29 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,14 @@ FLAGS=			-Wall -Werror -Wextra -std=c++98
 
 CC=				c++
 
-SRC_FILES=		zombieHorde.cpp \
-				Zombie.cpp \
+SRC_FILES=		Weapon.cpp \
+				HumanB.cpp \
+				HumanA.cpp \
 				main.cpp
 				
-HEADER_FILES=	Zombie.hpp
+HEADER_FILES=	Weapon.hpp \
+				HumanB.hpp \
+				HumanA.hpp
 
 OBJ_FILES=			$(SRC_FILES:.cpp=.o)
 

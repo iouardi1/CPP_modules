@@ -5,28 +5,24 @@
 #                                                     +:+ +:+         +:+      #
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/28 21:08:26 by iouardi           #+#    #+#              #
-#    Updated: 2022/10/29 11:09:51 by iouardi          ###   ########.fr        #
+#    Created: 2022/10/29 12:03:07 by iouardi           #+#    #+#              #
+#    Updated: 2022/10/29 12:11:11 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= 			Zombie
+NAME= 			brain
 
 FLAGS=			-Wall -Werror -Wextra -std=c++98
 
 CC=				c++
 
-SRC_FILES=		zombieHorde.cpp \
-				Zombie.cpp \
-				main.cpp
+SRC_FILES=		main.cpp
 				
-HEADER_FILES=	Zombie.hpp
-
 OBJ_FILES=			$(SRC_FILES:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ_FILES) $(HEADER_FILES)
+$(NAME): $(OBJ_FILES)
 	$(CC) $(FLAGS) $(OBJ_FILES) -o $(NAME)
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@

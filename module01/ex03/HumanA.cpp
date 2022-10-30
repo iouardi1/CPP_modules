@@ -1,24 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 11:22:13 by iouardi           #+#    #+#             */
-/*   Updated: 2022/10/29 12:01:25 by iouardi          ###   ########.fr       */
+/*   Created: 2022/10/29 15:54:26 by iouardi           #+#    #+#             */
+/*   Updated: 2022/10/30 20:56:23 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include  "HumanA.hpp"
 
-int main()
+HumanA::HumanA(std::string str, Weapon &weaapon) : weapon(weaapon) , name(str)
 {
-	Zombie  	*zombiie;
 	
-	zombiie = zombieHorde(10, "khteeek");
-
-	for (int i = 0; i < 10; i++)
-		zombiie[i].announce();
-	delete [] zombiie;
 }
+
+HumanA::~HumanA()
+{
+	std::cout << "Human " << name << " ghayerha" << std::endl;
+}
+
+Weapon&  HumanA::getWeapon()
+{
+	return (weapon);
+}
+
+void    HumanA::setWeapon(Weapon &weaapon)
+{
+	weapon = weaapon;
+}
+
+void	HumanA::attack(void)
+{
+	std::cout << name << " attacks with his " << weapon.getType() << std::endl;
+}
+
