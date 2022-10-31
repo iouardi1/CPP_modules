@@ -6,11 +6,11 @@
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/29 12:19:55 by iouardi           #+#    #+#              #
-#    Updated: 2022/10/30 17:10:29 by iouardi          ###   ########.fr        #
+#    Updated: 2022/10/31 12:25:44 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= 			Zombie
+NAME= 			human
 
 FLAGS=			-Wall -Werror -Wextra -std=c++98
 

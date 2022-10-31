@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 14:25:03 by iouardi           #+#    #+#             */
-/*   Updated: 2022/10/30 20:30:04 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/10/31 12:42:14 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ class   HumanB {
 		HumanB(std::string str);
 		~HumanB();
 		void	attack(void);
-		void	setWeapon(Weapon weapon);
-		void	setName(std::string _name);
+		void	setWeapon(Weapon &weapon);
 };
 
 #endif

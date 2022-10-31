@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:38:36 by iouardi           #+#    #+#             */
-/*   Updated: 2022/10/30 20:13:08 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/10/31 12:39:53 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class   Weapon{
 		Weapon(std::string _type);
 		~Weapon();
 	public:
-		std::string getType();
+		std::string &getType();
 
 	public:
 		void	setType(std::string str);
