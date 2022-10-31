@@ -1,0 +1,47 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/10/31 15:20:34 by iouardi           #+#    #+#              #
+#    Updated: 2022/10/31 15:20:36 by iouardi          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+KHTEK = 			human
+
+FLAGS=			-Wall -Werror -Wextra -std=c++98
+
+CC=				c++
+
+SRC_FILES=		Weapon.cpp \
+				HumanB.cpp \
+				HumanA.cpp \
+				main.cpp
+				
+HEADER_FILES=	Weapon.hpp \
+				HumanB.hpp \
+				HumanA.hpp
+
+OBJ_FILES=			$(SRC_FILES:.cpp=.o)
+
+all: $(KHTEK )
+
+$(KHTEK ): $(OBJ_FILES) $(HEADER_FILES)
+	$(CC) $(FLAGS) $(OBJ_FILES) -o $(KHTEK )
+%.o: %.c
+	$(CC) $(FLAGS) -c $< -o $@
+
+clean:
+	find . -name "*.o" -delete
+	find . -name "*.a" -delete
+
+fclean: clean
+	rm -f $(KHTEK )
+
+re: fclean all
+
+.PHONY:
+	all clean fclean re

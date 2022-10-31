@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:50:56 by iouardi           #+#    #+#             */
-/*   Updated: 2022/10/28 21:03:48 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/10/31 14:18:38 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ Zombie::~Zombie()
 }
 
 Zombie::Zombie(){}
+
+Zombie::Zombie(std::string str)
+{
+	name = str;
+	announce();
+}
 
 
 void	Zombie::setZombieName(std::string str)

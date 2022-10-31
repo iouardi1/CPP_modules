@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:40:47 by iouardi           #+#    #+#             */
-/*   Updated: 2022/10/29 11:10:53 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/10/31 14:24:35 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ class Zombie {
 	private:
 		std::string  name;
 	public:
-		~Zombie();
 		Zombie();
+		~Zombie();
+		Zombie(std::string str);
 		void		setZombieName(std::string str);
 		std::string	getZombieName();
 		void		announce(void);
