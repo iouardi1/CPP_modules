@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 20:10:32 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/01 20:59:56 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/01 21:33:21 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,5 @@ class Harl
 		void	complain(std::string level);
 		void	notFound();
 };
-
-
-template<typename n>
-n sum(n a, n b)
-{
-    return a;
-}
 
 #endif
