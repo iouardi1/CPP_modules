@@ -1,4 +1,4 @@
-# **************************************************************************** #
+# stqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstq* #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
@@ -6,31 +6,24 @@
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 15:20:34 by iouardi           #+#    #+#              #
-#    Updated: 2022/10/31 15:20:36 by iouardi          ###   ########.fr        #
+#    Updated: 2022/10/31 18:42:51 by iouardi          ###   ########.fr        #
 #                                                                              #
-# **************************************************************************** #
+# stqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstqstq* #
 
-KHTEK = 			human
+NAME= 			replace
 
 FLAGS=			-Wall -Werror -Wextra -std=c++98
 
 CC=				c++
 
-SRC_FILES=		Weapon.cpp \
-				HumanB.cpp \
-				HumanA.cpp \
-				main.cpp
-				
-HEADER_FILES=	Weapon.hpp \
-				HumanB.hpp \
-				HumanA.hpp
+SRC_FILES=		main.cpp
 
 OBJ_FILES=			$(SRC_FILES:.cpp=.o)
 
-all: $(KHTEK )
+all: $(NAME)
 
-$(KHTEK ): $(OBJ_FILES) $(HEADER_FILES)
-	$(CC) $(FLAGS) $(OBJ_FILES) -o $(KHTEK )
+$(NAME): $(OBJ_FILES)
+	$(CC) $(FLAGS) $(OBJ_FILES) -o $(NAME)
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
@@ -39,7 +32,7 @@ clean:
 	find . -name "*.a" -delete
 
 fclean: clean
-	rm -f $(KHTEK )
+	rm -f $(NAME)
 
 re: fclean all
 
