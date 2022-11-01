@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 15:38:27 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/01 20:14:50 by iouardi          ###   ########.fr       */
+/*   Created: 2022/11/01 20:14:18 by iouardi           #+#    #+#             */
+/*   Updated: 2022/11/01 20:45:26 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,33 @@ void    Harl::complain(std::string level)
 	
 	while (level != str[i] && i < 4)
 		i++;
-	(this->*ptr[i])();
+	switch (i)
+	{
+		case 0:
+		{
+			std::cout << "[ DEBUG ]\n";
+			(this->*ptr[0])();
+		}
+		case 1:
+		{
+			std::cout << "[ INFO ]\n";
+			(this->*ptr[1])();
+		}
+		case 2:
+		{
+			std::cout << "[ WARNING ]\n";
+			(this->*ptr[2])();
+		}
+		case 3:
+		{
+			std::cout << "[ ERROR ]\n";
+			(this->*ptr[3])();
+			break ;
+		}
+		default:
+		{
+			std::cout << "[ Probably complaining about insignificant problems ]\n";
+			break;
+		}
+	}
 }
