@@ -5,23 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 20:16:04 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/01 21:45:03 by iouardi          ###   ########.fr       */
+/*   Created: 2022/11/03 18:23:01 by iouardi           #+#    #+#             */
+/*   Updated: 2022/11/03 21:56:47 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "Fixed.hpp"
 
-int main (int ac, char **av)
+int main( void ) 
 {
-	if (ac == 2)
-	{
-		std::string		str(av[1]);
-		Harl			harl;
-	
-		harl.complain(str);
-	}
-	else
-		std::cout << "please enter one argument\n";
-	return (0);
+    Fixed a;
+    Fixed b( a );
+    Fixed c;
+    c = b;
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
+    return 0;
 }

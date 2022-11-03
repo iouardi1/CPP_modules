@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 20:16:04 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/01 21:45:03 by iouardi          ###   ########.fr       */
+/*   Created: 2022/11/03 15:53:45 by iouardi           #+#    #+#             */
+/*   Updated: 2022/11/03 18:39:52 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
-int main (int ac, char **av)
+#include <iostream>
+
+class   Fixed
 {
-	if (ac == 2)
-	{
-		std::string		str(av[1]);
-		Harl			harl;
-	
-		harl.complain(str);
-	}
-	else
-		std::cout << "please enter one argument\n";
-	return (0);
-}
+	private:
+		int					i;
+		static const int	j;
+	public:
+		Fixed();
+		Fixed(const Fixed &copy);
+		~Fixed();
+		Fixed &operator= (const Fixed &fixed);
+		int getRawBits(void) const;
+		void setRawBits(int const raw);
+		
+};
+
+#endif
