@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2022/11/03 21:56:40 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/05 14:09:03 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 
 const int Fixed::j = 8;
 
-Fixed::Fixed(): i(0) // default constructor
+Fixed::Fixed(): i(0)
 {
 	std::cout << "Default constructor called\n";
 }
 
-Fixed::Fixed(const Fixed& copy)//copy contructor
+Fixed::Fixed(const Fixed& copy)
 {
 	std::cout << "Copy constructor called\n";
 	*this = copy;
 }
 
-Fixed	&Fixed::operator= (const Fixed &fixed)//copy assignement operator
+Fixed	&Fixed::operator= (const Fixed &fixed)
 {
 	std::cout << "Copy assignment operator called\n";
 	i = fixed.getRawBits();

@@ -5,19 +5,24 @@
 #                                                     +:+ +:+         +:+      #
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/11 15:23:30 by iouardi           #+#    #+#              #
-#    Updated: 2022/11/04 15:57:52 by iouardi          ###   ########.fr        #
+#    Created: 2022/11/07 12:21:57 by iouardi           #+#    #+#              #
+#    Updated: 2022/11/07 19:16:17 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= 			PhoneBook
-FLAGS=			-Wall -Werror -Wextra -std=c++98 -pedantic
+NAME= 			Fixed
+
+FLAGS=			-Wall -Werror -Wextra -std=c++98
+
 CC=				c++
-SRC_FILES=		Contact.cpp \
-				main.cpp \
-				PhoneBook.cpp
-HEADER_FILES=	Contact.hpp \
-				PhoneBook.hpp
+
+SRC_FILES=		main.cpp \
+				Fixed.cpp \
+				Point.cpp \
+				bsp.cpp
+
+HEADER_FILES=	Fixed.hpp \
+				Point.hpp
 
 OBJ_FILES=			$(SRC_FILES:.cpp=.o)
 

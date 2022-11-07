@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 18:01:45 by iouardi           #+#    #+#             */
-/*   Updated: 2022/10/28 11:26:44 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/04 15:44:34 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,35 +45,35 @@ void    PhoneBook::addContact()
 		std::getline(std::cin, str);
 		if (std::cin.eof())
 			exit (0);
-	} while (str.empty() || str == "");
+	} while (str.empty());
 	contacts[i].setFirstName(str);
 	do {
 		std::cout << "Please enter the last name" << std::endl;
 		std::getline(std::cin, str);
 		if (std::cin.eof())
 			exit (0);
-	} while(str.empty() || str == "");
+	} while(str.empty());
 	contacts[i].setLastName(str);
 	do {
 		std::cout << "Please enter the nickname" << std::endl;
 		std::getline(std::cin, str);
 		if (std::cin.eof())
 			exit (0);
-	} while(str.empty() || str == "");
+	} while(str.empty());
 	contacts[i].setNickName(str);
 	do {
 		std::cout << "Please enter the phone number" << std::endl;
 		std::getline(std::cin, str);
 		if (std::cin.eof())
 			exit (0);
-	} while(str.empty() || str == "" || !checkStrIsdigit(str));
+	} while(str.empty() || !checkStrIsdigit(str));
 	contacts[i].setPhoneNumber(str);
 	do {
 		std::cout << "Please enter the darkest secret" << std::endl;
 		std::getline(std::cin, str);
 		if (std::cin.eof())
 			exit (0);
-	} while(str.empty() || str == "");
+	} while(str.empty());
 	contacts[i].setDarkestSecret(str);
 	i++;
 }
@@ -91,8 +91,7 @@ void	PhoneBook::searchContact()
 	std::cout << "|";
 	std::cout << std::setw(10) << "last name";
 	std::cout << "|";
-	std::cout << std::setw(10) << "nickname";
-	std::cout << "|" << std::endl;
+	std::cout << std::setw(10) << "nickname" << std::endl;
 	while (i < 8 && !getContact(i).getFirstName().empty())
 	{	
 		std::cout << std::setw(10) << i << "|";

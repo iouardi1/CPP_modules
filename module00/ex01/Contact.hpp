@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 17:14:49 by iouardi           #+#    #+#             */
-/*   Updated: 2022/10/25 03:28:23 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/04 16:08:35 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define CONTACT_HPP
 
 #include  <iostream>
-#include <iomanip>  
+#include <iomanip>
 #include <string>
 
 class   Contact {
@@ -39,7 +39,6 @@ class   Contact {
 		std::string	getPhoneNumber();
 		std::string	getDarkestSecret();
 };
-
 
 
 #endif

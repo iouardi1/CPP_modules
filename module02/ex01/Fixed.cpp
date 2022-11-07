@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 22:03:36 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/03 23:48:26 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/05 15:50:28 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 const int Fixed::j = 8;
 
-Fixed::Fixed(): i(0) // default constructor
+Fixed::Fixed(): i(0)
 {
 	std::cout << "Default constructor called\n";
 }
 
-Fixed::Fixed(const Fixed& copy)//copy contructor
+Fixed::Fixed(const Fixed& copy)
 {
 	std::cout << "Copy constructor called\n";
 	*this = copy;
 }
 
-Fixed::Fixed(int n)
+Fixed::Fixed(int const n)
 {
 	std::cout << "Int constructor called\n";
 	this->i = n << j;
@@ -38,7 +38,7 @@ Fixed::Fixed(const float n)
 }
 
 
-Fixed	&Fixed::operator= (const Fixed &fixed)//copy assignement operator
+Fixed	&Fixed::operator= (const Fixed &fixed)
 {
 	std::cout << "Copy assignment operator called\n";
 	i = fixed.i;
@@ -63,14 +63,13 @@ void	 Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat(void) const
 {
-	float   f = (this->i) / (1 << j);
-	return (f);
+	return ((float)(this->i) / (1 << j));
+
 }
 
 int	Fixed::toInt( void ) const
 {
-	int f = (this->i) >> j;
-	return (f);
+	return ((this->i) >> j);
 }
 
 std::ostream& operator<<(std::ostream& o, const Fixed& fixed)

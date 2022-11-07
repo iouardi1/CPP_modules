@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 22:03:16 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/05 16:37:50 by iouardi          ###   ########.fr       */
+/*   Created: 2022/11/07 12:20:56 by iouardi           #+#    #+#             */
+/*   Updated: 2022/11/07 12:35:33 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,28 @@ class   Fixed
 		float toFloat(void) const;
 		int toInt(void) const;
 		Fixed &operator= (const Fixed &fixed);
+		//comparaison operators
+		bool operator> (const Fixed &fixed);
+		bool operator< (const Fixed &fixed);
+		bool operator>= (const Fixed &fixed);
+		bool operator<= (const Fixed &fixed);
+		bool operator== (const Fixed &fixed);
+		bool operator!= (const Fixed &fixed);
+		//arithmetic operators
+		Fixed operator+ (const Fixed &fixed) const;
+		Fixed operator- (const Fixed &fixed) const;
+		Fixed operator* (const Fixed &fixed) const;
+		Fixed operator/ (const Fixed &fixed) const;
+		//i++, ++i, i--, --i
+		Fixed operator++ ();
+		Fixed operator++ (int);
+		Fixed operator-- ();
+		Fixed operator-- (int);
+		//overloaded mumber functions
+		static Fixed &min(Fixed &fixed1, Fixed &fixed2);
+		static const Fixed &min(const Fixed &fixed1, const Fixed &fixed2);
+		static Fixed &max(Fixed &fixed1, Fixed &fixed2);
+		static const Fixed &max(const Fixed &fixed1, const Fixed &fixed2);
 		
 };
 
