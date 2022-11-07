@@ -6,13 +6,13 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:35:46 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/07 19:23:23 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/07 19:28:33 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-float calculatingSign(Point const A, Point const B, Point const M)
+float calculatingSign(Point const &A, Point const &B, Point const &M)
 {
 	float	n1;
 	// float	n2;
@@ -21,7 +21,7 @@ float calculatingSign(Point const A, Point const B, Point const M)
 	return (n1);
 }
 
-bool bsp(Point const a, Point const b, Point const c, Point const point)
+bool bsp(Point const &a, Point const &b, Point const &c, Point const &point)
 {
 	float	n1, n2, n3;
 	bool	sign;
