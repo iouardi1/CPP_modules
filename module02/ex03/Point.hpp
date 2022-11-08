@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:28:22 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/07 19:28:56 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/07 21:20:21 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class   Point {
 		const Fixed	x;
 		const Fixed	y;
 
-
 	public:
 		Point();
 		~Point();
@@ -30,7 +29,6 @@ class   Point {
 		Point& operator=(const Point &point);
 		const Fixed getX(void) const;
 		const Fixed getY(void) const;
-		//
 };
 
 float calculatingSign(Point const &A, Point const &B, Point const &M);
