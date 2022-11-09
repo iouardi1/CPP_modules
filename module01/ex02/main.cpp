@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:03:12 by iouardi           #+#    #+#             */
-/*   Updated: 2022/10/29 12:17:12 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/09 18:16:31 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ int main()
 {
 	std::string	str = "HI THIS IS BRAIN";
 	std::string	*stringPTR = &str;
-	std::string	stringREF  = str;
+	std::string	&stringREF  = str;
 
 	std::cout << &str << std::endl;
 	std::cout << stringPTR << std::endl;
 	std::cout << &stringREF << std::endl;
 
-	std::cout << str << std::endl;
+
 	std::cout << *stringPTR << std::endl;
 	std::cout << stringREF << std::endl;
 }

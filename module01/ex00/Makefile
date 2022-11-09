@@ -6,7 +6,7 @@
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/27 22:22:06 by iouardi           #+#    #+#              #
-#    Updated: 2022/10/28 20:54:24 by iouardi          ###   ########.fr        #
+#    Updated: 2022/11/09 16:48:02 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRC_FILES=		newZombie.cpp \
 				randomChump.cpp \
 				Zombie.cpp \
 				main.cpp
+
 HEADER_FILES=	Zombie.hpp
 
 OBJ_FILES=			$(SRC_FILES:.cpp=.o)

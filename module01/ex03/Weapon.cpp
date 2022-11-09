@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:43:30 by iouardi           #+#    #+#             */
-/*   Updated: 2022/10/31 12:44:34 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/09 18:21:12 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Weapon::Weapon(std::string _type)
 Weapon::~Weapon(){}
 Weapon::Weapon(){}
 
-std::string& Weapon::getType()
+const std::string& Weapon::getType()
 {
 	return (type);
 }

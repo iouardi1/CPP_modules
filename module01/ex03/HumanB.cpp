@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 16:14:09 by iouardi           #+#    #+#             */
-/*   Updated: 2022/10/31 12:43:39 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/09 18:25:46 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ HumanB::HumanB(std::string str)
 
 HumanB::~HumanB()
 {
-    std::cout << "human " << name << " ghayerha\n";
+    std::cout << "human " << name << " destroyed\n";
 }
 
 void    HumanB::setWeapon(Weapon &weaapon)

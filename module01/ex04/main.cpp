@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 15:20:50 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/05 17:12:29 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/09 18:35:01 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ int main(int ac , char **av)
 	if (ac == 4)
 	{	
 		std::string		str1(av[1]);
-		std::ofstream	myfile2(str1 + ".replace");
 		std::string		str2(av[2]);
 		std::string		str3(av[3]);
-		if (str1 == "" || str2 == "")
+		if (str1.empty() || str2.empty())
 		{
 			std::cout << "please enter valid arguments\n";
 			return (0);
 		}
+		std::ofstream	myfile2(str1 + ".replace");
 		myfile.open(str1);
 		if (myfile.peek() == -1)
 		{

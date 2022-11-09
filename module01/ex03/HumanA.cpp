@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 15:54:26 by iouardi           #+#    #+#             */
-/*   Updated: 2022/10/30 20:56:23 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/09 18:25:43 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ HumanA::HumanA(std::string str, Weapon &weaapon) : weapon(weaapon) , name(str)
 
 HumanA::~HumanA()
 {
-	std::cout << "Human " << name << " ghayerha" << std::endl;
+	std::cout << "Human " << name << " destroyed" << std::endl;
 }
 
 Weapon&  HumanA::getWeapon()
