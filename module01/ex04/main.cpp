@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 15:20:50 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/09 18:35:01 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/09 21:43:18 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,11 @@ int main(int ac , char **av)
 				{
 					pos = str.find(str2, pos2);
 					if (pos != std::string::npos)
-						str.erase(pos, str2.length()).insert(pos, str3);
-					pos2 = pos;
+					{
+						str.erase(pos, str2.length());
+						str.insert(pos, str3);	
+					}
+					pos2 = pos + 1;
 				}	while (pos != std::string::npos);
 				myfile2 << str << std::endl;
 			}
