@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 23:14:06 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/15 23:52:46 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/16 00:02:17 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,8 @@ DiamondTrap::DiamondTrap(const DiamondTrap &copy)
 	*this = copy;
 }
 
+DiamondTrap& DiamondTrap::operator=(const DiamondTrap &copy)
+{
+	this->Name = copy.Name;
+	FlagTrap(ClapTrap(hitPoints)) = copy.getHitPoints();//haaaa lfaniiiid
+}
