@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 20:16:04 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/14 13:31:41 by iouardi          ###   ########.fr       */
+/*   Created: 2022/11/15 21:57:12 by iouardi           #+#    #+#             */
+/*   Updated: 2022/11/15 22:53:30 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
+#include "ClapTrap.hpp"
 
-int main (int ac, char **av)
-{		
-	if (ac != 2)
-	{
-		std::cout << "please enter one argument\n";
-		return 1;	
-	}
-	std::string		str(av[1]);
-	Harl			harl;
-	
-	harl.complain(str);
-	return (0);
-}
+class FragTrap : public ClapTrap
+{
+    public:
+        FragTrap();
+        ~FragTrap();
+        FragTrap(const FragTrap &copy);
+        FragTrap(std::string name);
+        FragTrap& operator=(const FragTrap &copy);
+        void    highFivesGuys(void);
+};
+
+
+
+#endif
+

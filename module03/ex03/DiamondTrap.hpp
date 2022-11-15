@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 20:16:04 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/14 13:31:41 by iouardi          ###   ########.fr       */
+/*   Created: 2022/11/15 23:14:12 by iouardi           #+#    #+#             */
+/*   Updated: 2022/11/15 23:50:30 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
+#include "FragTrap.hpp"
+#include "ScarvTrap.hpp"
 
-int main (int ac, char **av)
-{		
-	if (ac != 2)
-	{
-		std::cout << "please enter one argument\n";
-		return 1;	
-	}
-	std::string		str(av[1]);
-	Harl			harl;
+
+class DiamondTrap: public ScavTrap, public FragTrap
+{
+	private:
+		std::string	Name;
+	public:
+		DiamondTrap();
+		~DiamondTrap();
+		DiamondTrap(std::string _name);
+		DiamondTrap(const DiamondTrap &copy);
+		DiamondTrap& operator=(const DiamondTrap &copy);
 	
-	harl.complain(str);
-	return (0);
-}
+};
+
+#endif

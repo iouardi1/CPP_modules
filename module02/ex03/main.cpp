@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 19:10:23 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/08 14:16:40 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/15 20:12:55 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int main( void )
 {
-    Point    A(20, 30);
-    Point    B(30, 40);
-    Point    C(45, 25);
-    Point    X(25, 30);  //inside
-    Point    Y(40, 32); //outside
-    Point    Z(25, 35);   //outside : on the edge.
+    Point    A(0.5, 0.5);
+    Point    B(0, -1);
+    Point    C(2, 0);
+    Point    X(1, 0);  //inside
+    Point    Y(1, 1); //outside
+    Point    Z(0, 0);   //outside : on the edge.
 
     if (bsp(A, B, C, X))
         std::cout << "  The point X is inside the triangle !" << std::endl;
