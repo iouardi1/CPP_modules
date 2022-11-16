@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 19:14:47 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/16 17:26:31 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/16 22:17:16 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,34 +60,4 @@ void ScavTrap::guardGate()
 void	ScavTrap::attack(std::string const &target)
 {
 	std::cout << "ScavTrap: " << this->getName() << " attack" << target << ", causing " << this->getAttackDamage() << " points of damage!\n";
-}
-
-void	ScavTrap::setHitPoints(unsigned int hP)
-{
-	this->setHitPoints(hP);
-}
-
-void	ScavTrap::setEnergyPoints(unsigned int eP)
-{
-	this->setEnergyPoints(eP);
-}
-
-void	ScavTrap::setAttackDamage(unsigned int aD)
-{
-	this->setAttackDamage(aD);
-}
-
-unsigned int ScavTrap::getEnergyPoints() const
-{
-	return (this->getEnergyPoints());
-}
-
-unsigned int ScavTrap::getHitPoints() const
-{
-	return (this->getHitPoints());
-}
-
-unsigned int ScavTrap::getAttackDamage() const
-{
-	return (this->getAttackDamage());
 }

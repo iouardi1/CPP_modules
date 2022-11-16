@@ -27,7 +27,7 @@ class   ClapTrap {
 		ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &copy);
-		~ClapTrap();
+		virtual ~ClapTrap();
 		void	setPoints(unsigned int hitPoints, unsigned int energyPoints, unsigned int attackDamage);
 		void	setHitPoints(unsigned int hP);
 		void	setEnergyPoints(unsigned int eP);
