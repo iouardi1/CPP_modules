@@ -1,12 +1,12 @@
 /* ************************************************************************** */
-/*                                                                            */
+/*		                                                                        */
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:18:07 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/15 23:07:18 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/16 16:00:10 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <string>
 
 class   ClapTrap {
-	private:
+	protected:
 		std::string		Name;
 		unsigned int	hitPoints;
 		unsigned int	energyPoints;
@@ -25,15 +25,16 @@ class   ClapTrap {
 
 	public:
 		ClapTrap();
-        ClapTrap(std::string name);
-        ClapTrap(const ClapTrap &copy);
-        ~ClapTrap();
+		ClapTrap(std::string name);
+		ClapTrap(const ClapTrap &copy);
+		~ClapTrap();
 		void	setPoints(unsigned int hitPoints, unsigned int energyPoints, unsigned int attackDamage);
+		void	setHitPoints(unsigned int hP);
+		void	setEnergyPoints(unsigned int eP);
+		void	setAttackDamage(unsigned int aD);
 		unsigned int	getHitPoints() const;
 		unsigned int	getEnergyPoints() const;
 		unsigned int	getAttackDamage() const;
-		void setAttackDamage(unsigned int attackDamage);
-		unsigned int getAttackDamage();
 		std::string getName() const;
 		void	setName(std::string name);
 		ClapTrap &operator=(const ClapTrap &copy);

@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:29:58 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/15 23:07:06 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/16 16:03:03 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,16 +78,6 @@ void    ClapTrap::beRepaired(unsigned int amount)
 	}
 }
 
-void    ClapTrap::setAttackDamage(unsigned int attackDamage)
-{
-	this->attackDamage = attackDamage;
-}
-
-unsigned int ClapTrap::getAttackDamage()
-{
-	return (this->attackDamage);
-}
-
 std::string ClapTrap::getName() const
 {
 	return (Name);
@@ -96,6 +86,21 @@ std::string ClapTrap::getName() const
 void	ClapTrap::setName(std::string name)
 {
 	Name = name;
+}
+
+void	ClapTrap::setHitPoints(unsigned int hP)
+{
+	this->hitPoints = hP;
+}
+
+void	ClapTrap::setEnergyPoints(unsigned int eP)
+{
+	this->energyPoints = eP;
+}
+
+void	ClapTrap::setAttackDamage(unsigned int aD)
+{
+	this->attackDamage = aD;
 }
 
 void	ClapTrap::setPoints(unsigned int hitPoints, unsigned int energyPoints, unsigned int attackDamage)
