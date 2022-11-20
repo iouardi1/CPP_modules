@@ -6,13 +6,13 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 19:14:47 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/16 22:17:16 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/20 17:14:01 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScarvTrap.hpp"
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap(): ClapTrap("DefalutSt")
 {
 	std::cout << "default constructor of ScavTrap called\n";
 	this->hitPoints = 100;
@@ -45,8 +45,10 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &copy)
 
 	if ((this) != &copy)
 	{
-		ScavTrap((&copy)->getName());
-		this->setPoints((&copy)->getHitPoints(), (&copy)->getEnergyPoints(), (&copy)->getAttackDamage());
+		this->Name = copy.Name;
+		this->hitPoints = copy.hitPoints;
+		this->energyPoints = copy.energyPoints;
+		this->attackDamage = copy.attackDamage;
 		return (*this);
 	}
 	return (*this);
@@ -54,10 +56,10 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &copy)
 
 void ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap " << this->getName() <<  " is now in Gate keeper mode\n";
+	std::cout << "ScavTrap " << Name << " is now in Gate keeper mode\n";
 }
 
 void	ScavTrap::attack(std::string const &target)
 {
-	std::cout << "ScavTrap: " << this->getName() << " attack" << target << ", causing " << this->getAttackDamage() << " points of damage!\n";
+	std::cout << "ScavTrap: " << this->Name << " attack " << target << ", causing " << this->attackDamage << " points of damage!\n";
 }

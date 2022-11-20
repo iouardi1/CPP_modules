@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:44:27 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/15 23:10:43 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/20 17:30:51 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int main( void )
 	Froggi.takeDamage(20);
 	Froggi.attack("Clappi");
 	Clappi.takeDamage(20);
+	Scavi.takeDamage(20);
 	return (0);
 }

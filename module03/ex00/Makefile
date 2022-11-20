@@ -6,7 +6,7 @@
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 14:17:18 by iouardi           #+#    #+#              #
-#    Updated: 2022/11/08 14:17:57 by iouardi          ###   ########.fr        #
+#    Updated: 2022/11/20 18:18:16 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,17 +27,12 @@ all: $(NAME)
 
 $(NAME): $(OBJ_FILES) $(HEADER_FILES)
 	$(CC) $(FLAGS) $(OBJ_FILES) -o $(NAME)
-%.o: %.c
-	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	find . -name "*.o" -delete
-	find . -name "*.a" -delete
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY:
-	all clean fclean re

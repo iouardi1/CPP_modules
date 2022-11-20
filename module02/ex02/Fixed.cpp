@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 15:53:45 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/07 12:13:25 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/18 20:37:43 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ Fixed::Fixed(const float n)
 	this->i = int(roundf(n * (1 << j)));
 }
 
-
 Fixed	&Fixed::operator= (const Fixed &fixed)
 {
 	// std::cout << "Copy assignment operator called\n";
@@ -64,12 +63,11 @@ void	 Fixed::setRawBits(int const raw)
 float Fixed::toFloat(void) const
 {
 	return ((float)(this->i) / (1 << j));
-
-}
+}  
 
 int	Fixed::toInt( void ) const
 {
-	return ((this->i) >> j);
+	return ((this->i) * (1 >> j));
 }
 
 std::ostream& operator<<(std::ostream& o, const Fixed& fixed)
@@ -78,32 +76,32 @@ std::ostream& operator<<(std::ostream& o, const Fixed& fixed)
 	return (o);
 }
 
-bool	Fixed::operator== (const Fixed &fixed)
+bool	Fixed::operator== (const Fixed &fixed) const
 {
 	return (this->i == fixed.i);
 }
 
-bool	Fixed::operator>= (const Fixed &fixed)
+bool	Fixed::operator>= (const Fixed &fixed) const
 {
 	return (this->i >= fixed.i);
 }
 
-bool	Fixed::operator<= (const Fixed &fixed)
+bool	Fixed::operator<= (const Fixed &fixed) const
 {
 	return (this->i <= fixed.i);
 }
 
-bool	Fixed::operator> (const Fixed &fixed)
+bool	Fixed::operator> (const Fixed &fixed) const
 {
 	return (this->i > fixed.i);
 }
 
-bool	Fixed::operator< (const Fixed &fixed)
+bool	Fixed::operator< (const Fixed &fixed) const
 {
 	return (this->i < fixed.i);
 }
 
-bool    Fixed::operator!= (const Fixed &fixed)
+bool    Fixed::operator!= (const Fixed &fixed) const
 {
 	return (this->i != fixed.i);
 }
@@ -128,7 +126,7 @@ Fixed    Fixed::operator* (const Fixed &fixed) const
 {
 	Fixed	res;
 
-	res.setRawBits(this->i * fixed.i >> j);
+	res.setRawBits((long long)(this->i * fixed.i) >> j);
 	return (res);
 }
 
@@ -136,7 +134,7 @@ Fixed    Fixed::operator/ (const Fixed &fixed) const
 {
 	Fixed	res;
 
-	res.setRawBits(this->i * (1 << j) / fixed.i);
+	res.setRawBits((long long)(this->i * (1 << j)) / fixed.i);
 	return (res);
 }
 
@@ -193,4 +191,3 @@ const Fixed&	Fixed::max(Fixed const &fixed1, Fixed const &fixed2)
 		return	(fixed1);
 	return (fixed2);
 }
-

@@ -6,17 +6,17 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 23:14:06 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/16 21:58:58 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/20 20:39:49 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 #include "ClapTrap.hpp"
 
-DiamondTrap::DiamondTrap(): ClapTrap("DefaultDT")
+DiamondTrap::DiamondTrap()
 {
 	std::cout << "Default constructor of DiamondTrap is called\n";
-	this->Name = "DefaultDT";
+	this->Name = "DefaultDt";
 	this->hitPoints = FragTrap::hitPoints;
 	this->energyPoints = ScavTrap::energyPoints;
 	this->attackDamage = FragTrap::attackDamage;
@@ -24,13 +24,13 @@ DiamondTrap::DiamondTrap(): ClapTrap("DefaultDT")
 
 DiamondTrap::~DiamondTrap()
 {
-	std::cout << "Default destructor of DiamondTrap is called\n";
+	std::cout << "Destructor of DiamondTrap is called\n";
 }
 
 DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name")
 {
 	std::cout << "Constructor of DiamondTrap is called\n";
-	this->Name = "default";
+	this->Name = name;
 	this->hitPoints = FragTrap::hitPoints;
 	this->energyPoints = ScavTrap::energyPoints;
 	this->attackDamage = FragTrap::attackDamage;
@@ -54,4 +54,14 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap &copy)
 void	DiamondTrap::attack(const std::string & target)
 {
 	ScavTrap::attack(target);
+}
+
+void	DiamondTrap::whoAmI()
+{
+	std::cout << "my name is: " << Name << " , and my ClapTrap name is: " << ClapTrap::Name << std::endl;
+}
+
+std::string	DiamondTrap::getName()
+{
+	return(Name);
 }

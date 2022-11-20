@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:29:58 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/16 16:03:03 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/20 19:12:40 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,49 +78,7 @@ void    ClapTrap::beRepaired(unsigned int amount)
 	}
 }
 
-std::string ClapTrap::getName() const
+std::string	ClapTrap::getName() const
 {
-	return (Name);
-}
-
-void	ClapTrap::setName(std::string name)
-{
-	Name = name;
-}
-
-void	ClapTrap::setHitPoints(unsigned int hP)
-{
-	this->hitPoints = hP;
-}
-
-void	ClapTrap::setEnergyPoints(unsigned int eP)
-{
-	this->energyPoints = eP;
-}
-
-void	ClapTrap::setAttackDamage(unsigned int aD)
-{
-	this->attackDamage = aD;
-}
-
-void	ClapTrap::setPoints(unsigned int hitPoints, unsigned int energyPoints, unsigned int attackDamage)
-{
-	this->hitPoints = hitPoints;
-	this->energyPoints = energyPoints;
-	this->attackDamage = attackDamage;
-}
-
-unsigned int ClapTrap::getEnergyPoints() const
-{
-	return (this->energyPoints);
-}
-
-unsigned int ClapTrap::getHitPoints() const
-{
-	return (this->hitPoints);
-}
-
-unsigned int ClapTrap::getAttackDamage() const
-{
-	return (this->attackDamage);
+	return(Name);
 }

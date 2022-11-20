@@ -6,13 +6,13 @@
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 14:17:18 by iouardi           #+#    #+#              #
-#    Updated: 2022/11/15 23:13:40 by iouardi          ###   ########.fr        #
+#    Updated: 2022/11/20 18:20:05 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= 			Fixed
 
-FLAGS=			-Wall -Werror -Wextra -std=c++98
+FLAGS=			-Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98
 
 CC=				c++
 
@@ -33,17 +33,11 @@ all: $(NAME)
 
 $(NAME): $(OBJ_FILES) $(HEADER_FILES)
 	$(CC) $(FLAGS) $(OBJ_FILES) -o $(NAME)
-%.o: %.c
-	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	find . -name "*.o" -delete
-	find . -name "*.a" -delete
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-.PHONY:
-	all clean fclean re

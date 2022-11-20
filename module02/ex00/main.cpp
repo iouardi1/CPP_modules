@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:23:01 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/03 21:56:47 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/18 12:19:46 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main( void ) 
 {
     Fixed a;
-    Fixed b( a );
+    Fixed b(a);
     Fixed c;
     c = b;
     std::cout << a.getRawBits() << std::endl;

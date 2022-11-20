@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:29:58 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/15 21:36:39 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/20 17:05:40 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,41 +76,6 @@ void    ClapTrap::beRepaired(unsigned int amount)
 		this->energyPoints -= 1;
 		std::cout << "ClapTrapp " << Name << " repaired " << this->hitPoints << " energy points!\n";
 	}
-}
-
-void    ClapTrap::setAttackDamage(unsigned int attackDamage)
-{
-	this->attackDamage = attackDamage;
-}
-
-unsigned int ClapTrap::getAttackDamage()
-{
-	return (this->attackDamage);
-}
-
-std::string ClapTrap::getName() const
-{
-	return (Name);
-}
-
-void	ClapTrap::setPoints(unsigned int hitPoints, unsigned int energyPoints, unsigned int attackDamage)
-{
-	this->hitPoints = hitPoints;
-	this->energyPoints = energyPoints;
-	this->attackDamage = attackDamage;
-}
-
-unsigned int ClapTrap::getEnergyPoints() const
-{
-	return (this->energyPoints);
-}
-
-unsigned int ClapTrap::getHitPoints() const
-{
-	return (this->hitPoints);
-}
-
-unsigned int ClapTrap::getAttackDamage() const
-{
-	return (this->attackDamage);
+	else
+		std::cout << "ClapTrap " << Name << " is already dead!\n";
 }
