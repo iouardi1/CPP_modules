@@ -5,29 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/21 17:36:02 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/21 21:52:28 by iouardi          ###   ########.fr       */
+/*   Created: 2022/11/21 22:08:21 by iouardi           #+#    #+#             */
+/*   Updated: 2022/11/21 22:59:58 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
 int main()
 {
-	PhoneBook		phoneBook;
-	std::string		input;
-
-	do {
-		std::cout << "Please enter your command : " << std::endl;
-		std::getline(std::cin, input);
-		if (std::cin.eof())
-			exit (0);
-		else if (input ==  "ADD")
-			phoneBook.addContact();
-		else if (input == "SEARCH")
-			phoneBook.searchContact();
-		else if (input != "EXIT")
-			std::cout << "wrong command :(" << std::endl;
-		}	while (input != "EXIT" || input == "");
-	return (0);
+const Animal* meta = new Animal();
+const Animal* j = new Dog();
+const Animal* i = new Cat();
+std::cout << j->getType() << " " << std::endl;
+std::cout << i->getType() << " " << std::endl;
+// i->makeSound(); //will output the cat sound!
+// j->makeSound();
+meta->makeSound();
+// ...
+return 0;
 }
