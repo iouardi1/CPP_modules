@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 21:44:29 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/21 22:50:47 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/22 14:24:15 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Cat &Cat::operator=(const Cat &copy)
 	return *this;
 }
 
-void	makeSound()
+void	Cat::makeSound() const
 {
     std::cout << "Cats meow meow" << std::endl;
 }

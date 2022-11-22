@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 21:16:27 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/21 23:02:52 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/22 16:27:56 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ class   Animal {
 		std::string		type;
 	public:
 		Animal();
-		~Animal();
+		virtual ~Animal();
 		Animal(std::string _type);
 		Animal(const Animal &copy);
 		Animal& operator=(const Animal &copy);
-		std::string& getType() const;
-		void	makeSound();
+		std::string getType() const;
+		virtual void	makeSound() const;
 };
 
 #endif

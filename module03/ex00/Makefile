@@ -6,13 +6,13 @@
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 14:17:18 by iouardi           #+#    #+#              #
-#    Updated: 2022/11/20 18:18:16 by iouardi          ###   ########.fr        #
+#    Updated: 2022/11/22 14:06:00 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= 			Fixed
 
-FLAGS=			-Wall -Werror -Wextra -std=c++98
+CPPFLAGS=			-Wall -Werror -Wextra -std=c++98
 
 CC=				c++
 

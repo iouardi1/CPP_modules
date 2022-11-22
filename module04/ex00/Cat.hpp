@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 21:29:51 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/21 22:55:33 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/22 14:55:37 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 #define CAT_HPP
 #include "Animal.hpp"
 
-class Cat : virtual public Animal
+class Cat : public Animal
 {
-    public:
-        Cat();
-        ~Cat();
-        Cat(const Cat &copy);
-        Cat& operator=(const Cat &copy);
-        void	makeSound();
+	public:
+		Cat();
+		~Cat();
+		Cat(const Cat &copy);
+		Cat& operator=(const Cat &copy);
+		void	makeSound() const;
 };
 
 #endif

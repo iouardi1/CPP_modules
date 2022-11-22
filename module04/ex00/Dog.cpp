@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 22:03:43 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/21 22:50:49 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/22 14:24:39 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Dog &Dog::operator=(const Dog &copy)
     return *this;
 }
 
-void	makeSound()
+void	Dog::makeSound() const
 {
     std::cout << "Dogs bark" << std::endl;
 }
