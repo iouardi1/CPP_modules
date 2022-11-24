@@ -6,12 +6,12 @@
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 15:23:30 by iouardi           #+#    #+#              #
-#    Updated: 2022/11/04 15:57:52 by iouardi          ###   ########.fr        #
+#    Updated: 2022/11/24 18:41:28 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= 			PhoneBook
-FLAGS=			-Wall -Werror -Wextra -std=c++98 -pedantic
+CPPFLAGS=		-Wall -Werror -Wextra -std=c++98 -pedantic
 CC=				c++
 SRC_FILES=		Contact.cpp \
 				main.cpp \

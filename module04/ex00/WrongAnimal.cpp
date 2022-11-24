@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 16:01:16 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/22 20:43:22 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/24 19:09:01 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ WrongAnimal& 	WrongAnimal::operator=(const WrongAnimal &copy)
 
 void WrongAnimal::makeSound() const
 {
-	std::cout << "random sound : jadjagdhjaghja" << std::endl;
+	std::cout << "random but wrong : whooowhooowhoooo" << std::endl;
 }

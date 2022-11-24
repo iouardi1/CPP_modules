@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:54:45 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/22 16:39:39 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/24 19:05:26 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class    WrongCat : public WrongAnimal
 		~WrongCat();
 		WrongCat(const WrongCat &copy);
 		WrongCat &operator=(const WrongCat &other);
+		void	makeSound() const;
 };
 
 #endif

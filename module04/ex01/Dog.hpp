@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 22:00:19 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/24 17:10:19 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/24 19:36:43 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Dog : public Animal
 		Brain	*brain;
 	public:
 		Dog();
-		~Dog();
+		virtual ~Dog();
 		Dog(const Dog &copy);
 		Dog& operator=(const Dog &copy);
 		Animal& operator=(const Animal &copy);
