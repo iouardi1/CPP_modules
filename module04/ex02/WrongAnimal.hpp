@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 20:51:10 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/24 17:05:38 by iouardi          ###   ########.fr       */
+/*   Created: 2022/11/22 15:58:32 by iouardi           #+#    #+#             */
+/*   Updated: 2022/11/22 18:56:59 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
+
 #include <iostream>
 
-class Brain
+class   WrongAnimal
 {
 	protected:
-		std::string ideas[100];
+		std::string type;
 	public:
-		Brain();
-		~Brain();
-		Brain(const Brain& copy);
-		Brain&	operator=(const Brain & copy);
+		WrongAnimal();
+		virtual ~WrongAnimal();
+		WrongAnimal(const WrongAnimal &copy);
+		WrongAnimal & operator=(const WrongAnimal &copy);
+		void makeSound() const;
 };
 
 #endif

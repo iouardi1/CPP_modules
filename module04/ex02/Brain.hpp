@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 20:51:10 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/24 17:05:38 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/24 12:04:14 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Brain
 		Brain();
 		~Brain();
 		Brain(const Brain& copy);
-		Brain&	operator=(const Brain & copy);
+		Brain & operator=(const Brain & copy);
 };
 
 #endif

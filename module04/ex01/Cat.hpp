@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 21:29:51 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/24 11:11:26 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/24 18:09:09 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ class Cat : public Animal
 		~Cat();
 		Cat(const Cat &copy);
 		Cat& operator=(const Cat &copy);
+		Animal& operator=(const Animal &copy);
 		void	makeSound() const;
+		Brain*	getBrain() const;
 };
 
 #endif

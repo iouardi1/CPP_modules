@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 20:51:10 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/24 17:05:38 by iouardi          ###   ########.fr       */
+/*   Created: 2022/11/22 15:54:45 by iouardi           #+#    #+#             */
+/*   Updated: 2022/11/22 16:39:39 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
-#include <iostream>
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-class Brain
+#include "WrongAnimal.hpp"
+
+class    WrongCat : public WrongAnimal
 {
-	protected:
-		std::string ideas[100];
 	public:
-		Brain();
-		~Brain();
-		Brain(const Brain& copy);
-		Brain&	operator=(const Brain & copy);
+		WrongCat();
+		~WrongCat();
+		WrongCat(const WrongCat &copy);
+		WrongCat &operator=(const WrongCat &other);
 };
 
 #endif

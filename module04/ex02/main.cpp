@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 20:51:10 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/24 17:05:38 by iouardi          ###   ########.fr       */
+/*   Created: 2022/11/21 22:08:21 by iouardi           #+#    #+#             */
+/*   Updated: 2022/11/24 15:18:42 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
-#include <iostream>
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-class Brain
+int main()
 {
-	protected:
-		std::string ideas[100];
-	public:
-		Brain();
-		~Brain();
-		Brain(const Brain& copy);
-		Brain&	operator=(const Brain & copy);
-};
-
-#endif
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	j->makeSound();
+	i->makeSound();
+	delete j;
+	delete i;
+	return 0;
+}

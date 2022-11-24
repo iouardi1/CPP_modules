@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 22:00:19 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/24 11:10:19 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/24 17:10:19 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ class Dog : public Animal
 		~Dog();
 		Dog(const Dog &copy);
 		Dog& operator=(const Dog &copy);
+		Animal& operator=(const Animal &copy);
 		void	makeSound() const;
+		Brain*	getBrain() const;
 };
 
 #endif
