@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 22:00:19 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/24 23:20:49 by iouardi          ###   ########.fr       */
+/*   Created: 2022/11/30 23:56:36 by iouardi           #+#    #+#             */
+/*   Updated: 2022/12/01 00:15:23 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "Bureaucrat.hpp"
 
-class Dog : public Animal
+int main()
 {
-	private:
-		Brain	*brain;
-	public:
-		Dog();
-		virtual ~Dog();
-		Dog(const Dog &copy);
-		Dog& operator=(const Dog &copy);
-		void	makeSound() const;
-		Brain*	getBrain() const;
-};
-
-#endif
+    try {
+        Bureaucrat khtek("smito", 0);
+        std::cout << khtek;
+        khtek.decrementGrade();
+        std::cout << khtek;
+    }
+    
+    catch(std::exception& e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+}

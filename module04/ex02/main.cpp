@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 22:08:21 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/24 19:40:23 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/26 22:19:37 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,16 @@
 
 int main()
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	j->makeSound();
-	i->makeSound();
-	delete j;
-	delete i;
+
+	Dog a = Dog();
+	Animal *animal = new Dog();
+
+	animal->makeSound();
+	
+	Dog b = a;
+	
+	a = b;
+	delete animal;
+	// system("leaks Animal");
 	return 0;
 }

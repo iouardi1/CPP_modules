@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 21:16:27 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/24 19:46:53 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/25 13:24:28 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ class   Animal {
 		Animal& operator=(const Animal &copy);
 		std::string getType() const;
 		virtual void	makeSound() const = 0;
-		virtual Brain*	getBrain() const = 0;
 };
 
 #endif

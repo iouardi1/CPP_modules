@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:35:46 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/07 21:00:37 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/30 20:55:43 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ bool bsp(Point const &a, Point const &b, Point const &c, Point const &point)
 	float	n1, n2, n3;
 	bool	sign;
 
-	n1 = calculatingSign(a, b, c, point);
+	n1 = calculatingSign(a, b, c, point); 
 	n2 = calculatingSign(b, c, a,  point);
 	n3 = calculatingSign(c, a, b, point);
 	

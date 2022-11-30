@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 21:29:51 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/24 19:36:59 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/24 23:04:38 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class Cat : public Animal
 		virtual ~Cat();
 		Cat(const Cat &copy);
 		Cat& operator=(const Cat &copy);
-		Animal& operator=(const Animal &copy);
 		void	makeSound() const;
 		Brain*	getBrain() const;
 };

@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 22:08:21 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/24 19:36:14 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/11/26 22:11:00 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,7 @@ int main()
 		delete k[l];
 		std::cout << "------------------------------------------\n";
 	}
+	WrongAnimal *wrongAnimal = new WrongCat();
+	delete wrongAnimal;
 	return 0;
 }
