@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 23:56:36 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/03 11:49:53 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/03 14:41:27 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,14 @@
 int main()
 {
 	try {
-		Bureaucrat khtek("smito", 0);
+		Bureaucrat khtek("smito", 150);
+		Form khtek_lukhra("smithaa", 0, 150, 1);
 		std::cout << khtek;
-		khtek.decrementGrade();
-		khtek.incrementGrade();
-		std::cout << khtek;
+		std::cout << khtek_lukhra;
+		khtek_lukhra.beSigned(khtek);
+		// khtek.decrementGrade();
+		// khtek.incrementGrade();
+		// std::cout << khtek;
 	}
 	
 	catch(std::exception& e)

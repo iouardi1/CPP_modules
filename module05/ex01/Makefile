@@ -6,7 +6,7 @@
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/25 14:10:02 by iouardi           #+#    #+#              #
-#    Updated: 2022/12/03 11:39:00 by iouardi          ###   ########.fr        #
+#    Updated: 2022/12/03 11:52:58 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,12 @@ CPPFLAGS=			-Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98
 CC=				c++
 
 SRC_FILES=		main.cpp \
-				Bureaucrat.cpp
+				Bureaucrat.cpp \
+				Form.cpp
 				
 
-HEADER_FILES=	Bureaucrat.hpp
+HEADER_FILES=	Bureaucrat.hpp \
+				Form.hpp
 				
 OBJ_FILES=			$(SRC_FILES:.cpp=.o)
 
