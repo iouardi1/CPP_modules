@@ -6,21 +6,22 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 23:56:36 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/03 15:51:48 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/03 23:42:07 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
 	try {
 		Bureaucrat khtek("smito", 150);
-		Form khtek_lukhra("smithaa", 0, 150, 1);
-		std::cout << khtek;
-		std::cout << khtek_lukhra;
-		khtek_lukhra.beSigned(khtek);
-		std::cout << khtek;
+		ShrubberyCreationForm khtek_lukhra("taaarget");
+		// std::cout << khtek_lukhra;
+		// khtek_lukhra.beSigned(khtek);
+		khtek_lukhra.execute(khtek);
 	}
 
 	catch(std::exception& e)

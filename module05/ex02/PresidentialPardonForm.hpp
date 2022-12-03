@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/30 23:56:36 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/03 15:51:48 by iouardi          ###   ########.fr       */
+/*   Created: 2022/12/04 00:21:59 by iouardi           #+#    #+#             */
+/*   Updated: 2022/12/04 00:25:55 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
+#include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-int main()
-{
-	try {
-		Bureaucrat khtek("smito", 150);
-		Form khtek_lukhra("smithaa", 0, 150, 1);
-		std::cout << khtek;
-		std::cout << khtek_lukhra;
-		khtek_lukhra.beSigned(khtek);
-		std::cout << khtek;
-	}
+class Form;
+class Bureaucrat;
 
-	catch(std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-}
+
+class   PresidentialPardonForm: public Form
+{
+	private:
+		std::string	target;
+	public:
+		PresidentialPardonForm();
+		~PresidentialPardonForm();
+		PresidentialPardonForm(const PresidentialPardonForm & copy);
+		PresidentialPardonForm & operator=(const PresidentialPardonForm &copy);
+};
+
+#endif
