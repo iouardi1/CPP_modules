@@ -6,7 +6,7 @@
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/25 14:10:02 by iouardi           #+#    #+#              #
-#    Updated: 2022/12/03 23:02:13 by iouardi          ###   ########.fr        #
+#    Updated: 2022/12/04 01:20:44 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,14 +20,14 @@ SRC_FILES=		main.cpp \
 				Bureaucrat.cpp \
 				Form.cpp \
 				ShrubberyCreationForm.cpp \
-				# PresidentialPardonForm.cpp \
+				PresidentialPardonForm.cpp \
 				RobotomyRequestForm.cpp
 
 
 HEADER_FILES=	Bureaucrat.hpp \
 				Form.hpp \
 				ShrubberyCreationForm.hpp \
-				# PresidentialPardonForm.hpp \
+				PresidentialPardonForm.hpp \
 				RobotomyRequestForm.hpp
 				
 				

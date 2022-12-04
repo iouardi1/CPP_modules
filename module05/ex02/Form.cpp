@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 12:03:14 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/03 23:41:35 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/04 01:48:49 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,6 @@ Form::Form(const std::string name, bool sign, const int gradeSign, const int gra
 		throw GradeTooHighException();
 	std::cout << "Constructor for Form is called" << std::endl;
 }
-
-// Form::Form(const std::string name, const int gradeSign, const int gradeExec): name(name), gradeSign(gradeSign), gradeExec(gradeExec)
-// {
-// 	std::cout << "Constructor for Form is called" << std::endl;
-// }
 
 Form& Form::operator=(const Form& copy)
 {

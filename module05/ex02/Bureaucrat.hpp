@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 14:12:01 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/03 22:15:20 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/04 00:52:11 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ class Bureaucrat{
 			const char *what() const throw();
 		};
 		void	signForm(const Form &form);
+		void	executeForm(Form const & form);
 };
 
 std::ostream& operator<<(std::ostream& o, const Bureaucrat& bureau);

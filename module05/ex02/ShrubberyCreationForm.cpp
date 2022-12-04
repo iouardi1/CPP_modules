@@ -6,21 +6,21 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 16:05:42 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/04 00:10:24 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/04 02:09:45 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include "Bureaucrat.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(): Form("Shrubbery", 0, 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(): Form("Shrubbery", 0, 145, 137), target("ShrubberyCreation")
 {
 	std::cout << "Default constructor for ShrubberyCreationForm is called\n";
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-	std::cout << "Default destructor for ShrubberyCreationForm is called\n";
+	std::cout << "Destructor for ShrubberyCreationForm is called\n";
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target): Form("Shrubbery", 0, 145, 137), target(target)
@@ -40,9 +40,9 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	return *this;
 }
 
-void	ShrubberyCreationForm::execute(Bureaucrat const &executor)
+void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-	if (executor.getGrade() > getGradeSign())
+	if (executor.getGrade() > getGradeExec())
 		throw GradeTooLowException();
 	else if (getSign() == false)
 		throw FormSignedException();
@@ -69,9 +69,8 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor)
 			"        ###" << std::endl <<
 			"        ###" << std::endl <<
 			"        ###" << std::endl <<
-		std::endl;
+			std::endl;
 		}
 		myfile.close();
 	}
-		
 }

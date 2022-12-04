@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 23:50:50 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/04 00:20:06 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/04 02:09:28 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(): Form("RobotomyRequest", 0, 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(): Form("RobotomyRequest", 0, 72, 45), target("RobotomyRequest")
 {
 	std::cout << "Default constructor for RobotomyRequestForm is called\n";
 }
@@ -45,7 +45,7 @@ static int halfCases = 0;
 
 void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	if (executor.getGrade() > getGradeSign())
+	if (executor.getGrade() > getGradeExec())
 		throw GradeTooLowException();
 	else if (getSign() == false)
 		throw FormSignedException();

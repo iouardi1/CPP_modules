@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 15:58:19 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/03 22:46:49 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/04 00:49:06 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class ShrubberyCreationForm : public Form
 		~ShrubberyCreationForm();
 		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
 		ShrubberyCreationForm &operator=(const ShrubberyCreationForm& copy);
-		void	execute(Bureaucrat const &executor);
+		void	execute(Bureaucrat const &executor) const;
 		
 };
 

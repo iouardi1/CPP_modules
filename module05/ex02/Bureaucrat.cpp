@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 22:41:22 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/03 21:52:57 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/04 01:23:01 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat& copy)
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "default destructor for Bureaucrat is called\n";
+	std::cout << "Destructor for Bureaucrat is called\n";
 }
 
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat& copy)
@@ -100,4 +100,9 @@ void	Bureaucrat::signForm(const Form &form)
 		std::cout << name << " couldn't sign " << form.getName() << " because ";
 		throw GradeTooLowException();
 	}
+}
+
+void	Bureaucrat::executeForm(Form const & form)
+{
+	form.execute(*this);
 }
