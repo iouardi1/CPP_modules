@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 23:56:36 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/05 15:20:14 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/05 15:30:51 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int main()
 		rrf = someRandomIntern.makeForm("Robotomy request", "Bender");
 		rrf = someRandomIntern.makeForm("Presidenhvghfvtial pardon", "Bender");
 		rrf = someRandomIntern.makeForm("Shrubbery creation", "Bender");
-		system("leaks Bureaucrat");
 	}
 
 	catch(std::exception& e)

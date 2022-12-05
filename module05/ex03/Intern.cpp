@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 11:36:36 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/05 15:20:27 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/05 15:28:45 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,17 @@ Intern& Intern::operator=(const Intern& copy)
 	return *this;
 }
 
- Form* PardonForm(const std::string target)
+static Form* PardonForm(const std::string target)
 {
 	return	(new PresidentialPardonForm(target));
 }
 
- Form* RequestForm(const std::string target)
+static Form* RequestForm(const std::string target)
 {
 	return	(new RobotomyRequestForm(target));
 }
 
- Form* CreationForm(const std::string target)
+static Form* CreationForm(const std::string target)
 {
 	return	(new ShrubberyCreationForm(target));
 }
@@ -57,7 +57,7 @@ Form* Intern::makeForm(const std::string name, const std::string target)
 {
 	Form* (*forms[])(const std::string target) = {&PardonForm, &RequestForm, &CreationForm};
 	std::string availableForms[] = {"Presidential pardon", "Robotomy request", "Shrubbery creation"};
-	
+
 	int i;
 	for (i = 0; i < 3; i++)
 	{
