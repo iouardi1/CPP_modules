@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 22:41:22 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/01 00:13:13 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/05 19:23:05 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat& copy)
 {
-	Bureaucrat(copy.name, copy.grade);
+	grade = copy.grade; 
 	std::cout << "copy assignment operator for Bureaucrat is called\n";
 	return *this;
 }
@@ -56,22 +56,20 @@ int Bureaucrat::getGrade() const
 
 void	Bureaucrat::incrementGrade()
 {
-	if (grade < 2)
+	grade -= 1;
+	if (grade < 1)
 		throw GradeTooHighException();
-	else if (grade > 151)
-		throw GradeTooHighException();
-	else
-		grade -= 1;
+	else if (grade > 150)
+		throw GradeTooLowException();
 }
 
 void	Bureaucrat::decrementGrade()
 {
-	if (grade < 0)
+	grade += 1;
+	if (grade < 1)
 		throw GradeTooHighException();
-	else if (grade > 149)
-		throw GradeTooHighException();
-	else
-		grade += 1;
+	else if (grade > 150)
+		throw GradeTooLowException();
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
