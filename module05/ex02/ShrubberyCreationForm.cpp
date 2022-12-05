@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 16:05:42 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/04 02:09:45 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/05 14:31:23 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,11 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 	{	
 		std::ofstream myfile;
 		myfile.open(target + "_shrubbery");
+		if (myfile.fail())
+		{
+			std::cout << "file failed to open\n";
+			return ;
+		}
 		for (int i = 0; i < 5; i++)
 		{
 			myfile <<

@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 11:53:20 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/04 01:26:16 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/05 14:22:22 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #define FORM_HPP
 #include <iostream>
 #include <exception>
-// #include "Bureaucrat.hpp"
+#include "Bureaucrat.hpp"
+
 class Bureaucrat;
 
 class Form {

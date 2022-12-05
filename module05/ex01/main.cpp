@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 23:56:36 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/03 15:51:48 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/05 14:18:19 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int main()
 		std::cout << khtek;
 		std::cout << khtek_lukhra;
 		khtek_lukhra.beSigned(khtek);
-		std::cout << khtek;
+		std::cout << khtek_lukhra;
+		khtek.signForm(khtek_lukhra);
 	}
 
 	catch(std::exception& e)

@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 12:03:14 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/03 14:38:25 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/05 14:16:35 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,8 @@ void	Form::beSigned(Bureaucrat const & copy)
 std::ostream& operator<<(std::ostream& o, const Form& form)
 {
 	if (form.getSign())
-		o << form.getName() << ": is signed!, and has : " << form.getGradeSign() << " grade for sign, and " << form.getGradeExec() << " execution grade\n";
+		o << form.getName() << ": is signed!, and has : " << form.getGradeSign() << " signature grade, and " << form.getGradeExec() << " execution grade\n";
 	else 
-		o << form.getName() << ": is not signed!, and has : " << form.getGradeSign() << ", and " << form.getGradeExec() << " execution grade\n";
+		o << form.getName() << ": is not signed!, and has : " << form.getGradeSign() << " signature grade, and " << form.getGradeExec() << " execution grade\n";
 	return o;
 }
