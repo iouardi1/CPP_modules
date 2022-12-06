@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 19:57:11 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/05 20:06:17 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/06 12:48:00 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int main(int ac, char **av)
 		std::cerr << "Please enter one argument" << std::endl;
 		return 1;
 	}
-	try{
-		
+	try {
+		Conversion convert;
 	}
 	catch (std::exception& e)
 	{
