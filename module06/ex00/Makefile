@@ -6,26 +6,21 @@
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 19:57:31 by iouardi           #+#    #+#              #
-#    Updated: 2022/12/05 19:58:01 by iouardi          ###   ########.fr        #
+#    Updated: 2022/12/06 21:53:02 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= 			Conversion
+NAME= 			convert
 
 CPPFLAGS=			-Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98
 
 CC=				c++
 
-SRC_FILES=		main.cpp
-				
+SRC_FILES=		main.cpp \
+				Conversion.cpp
 
 
-# HEADER_FILES=	Bureaucrat.hpp \
-# 				Form.hpp \
-# 				ShrubberyCreationForm.hpp \
-# 				PresidentialPardonForm.hpp \
-# 				RobotomyRequestForm.hpp \
-# 				Intern.hpp
+HEADER_FILES=	Conversion.hpp
 				
 				
 OBJ_FILES=			$(SRC_FILES:.cpp=.o)
