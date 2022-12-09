@@ -6,18 +6,28 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 20:02:57 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/06 22:29:27 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/09 12:48:03 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONVERSION_HPP
 #define CONVERSION_HPP
 #include <iostream>
+#include <limits>
 
 class Conversion
 {
 	private:
 		std::string		str;
+		std::string		chartype;
+		bool			isChar;
+		std::string		intType;
+		bool			isInt;
+		std::string		floatType;
+		bool			isFloat;
+		std::string		doubleType;
+		bool			isDouble;
+		
 	public:
 		Conversion();
 		~Conversion();
@@ -33,6 +43,7 @@ class Conversion
 		};
 		//setter
 		void	setStr(std::string arg);
+		void	parseArg();
 		
 		
 };
