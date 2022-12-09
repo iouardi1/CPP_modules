@@ -6,7 +6,7 @@
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 19:57:31 by iouardi           #+#    #+#              #
-#    Updated: 2022/12/09 14:20:10 by iouardi          ###   ########.fr        #
+#    Updated: 2022/12/09 14:22:46 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,7 @@ CPPFLAGS=			-Wall -Werror -Wextra -std=c++98
 
 CC=				c++
 
-SRC_FILES=		main.cpp \
-				Conversion.cpp
-
-
-HEADER_FILES=	Conversion.hpp
-				
+SRC_FILES=		main.cpp
 				
 OBJ_FILES=			$(SRC_FILES:.cpp=.o)
 

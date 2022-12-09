@@ -1,35 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/05 19:57:11 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/09 18:41:19 by iouardi          ###   ########.fr       */
+/*   Created: 2022/12/09 15:20:01 by iouardi           #+#    #+#             */
+/*   Updated: 2022/12/09 17:20:29 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Conversion.hpp"
+#ifndef BASE_HPP
+#define BASE_HPP
+#include <iostream>
+#include <time.h>
+#include <cstdlib>
 
-int main(int ac, char **av)
+class   Base
 {
-	if (ac != 2)
-	{
-		std::cerr << "Please enter one argument" << std::endl;
-		return 1;
-	}
-	try {
-		Conversion convert;
-		std::string str = av[1];
-		convert.setStr(str);
-		convert.toChar();
-		convert.toInt();
-		convert.toFloat();
-		convert.toDouble();
-	}
-	catch (std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-}
+	public:
+		virtual ~Base();
+};
+
+class	A: public Base
+{
+	
+};
+
+class	B: public Base
+{
+	
+};
+
+class	C: public Base
+{
+	
+};
+
+Base*	generate(void);
+void    identify(Base *p);
+void	identify(Base& p);
+
+#endif

@@ -6,30 +6,47 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 19:57:11 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/09 18:41:19 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/09 14:55:00 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Conversion.hpp"
+#include <iostream>
 
-int main(int ac, char **av)
+struct Data 
 {
-	if (ac != 2)
-	{
-		std::cerr << "Please enter one argument" << std::endl;
-		return 1;
-	}
-	try {
-		Conversion convert;
-		std::string str = av[1];
-		convert.setStr(str);
-		convert.toChar();
-		convert.toInt();
-		convert.toFloat();
-		convert.toDouble();
-	}
-	catch (std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	int				i;
+	int				j;
+	char			c;
+	std::string		str;
+};
+
+uintptr_t	serialize(Data*	ptr)
+{
+	return (reinterpret_cast<uintptr_t>(ptr));
+}
+
+Data*	deserialize(uintptr_t raw)
+{
+	return (reinterpret_cast<Data *>(raw));
+}
+
+int main()
+{
+	uintptr_t	raw;
+	Data		ptr;
+	Data		*data;
+
+	ptr.i = 1;
+	ptr.j = 2;
+	ptr.c = 'a';
+	ptr.str = "hada string";
+
+	raw = serialize(&ptr);
+	data = deserialize(raw);
+	std::cout << raw << std::endl;
+	std::cout << "--------------------------------" << std::endl;
+	std::cout << data->i << std::endl;
+	std::cout << data->j << std::endl;
+	std::cout << data->c << std::endl;
+	std::cout << data->str << std::endl;
 }

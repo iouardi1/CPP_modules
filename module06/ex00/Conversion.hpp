@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 20:02:57 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/09 12:48:03 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/09 18:43:50 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,9 @@ class Conversion
 {
 	private:
 		std::string		str;
-		std::string		chartype;
 		bool			isChar;
-		std::string		intType;
 		bool			isInt;
-		std::string		floatType;
 		bool			isFloat;
-		std::string		doubleType;
 		bool			isDouble;
 		
 	public:
@@ -36,7 +32,7 @@ class Conversion
 		void	toInt() const;
 		void	toDouble() const;
 		void	toFloat() const;
-		// char	toChar() const;
+		void	toChar() const;
 		class Errorexception : public std::exception
 		{
 			const char *what() const throw();

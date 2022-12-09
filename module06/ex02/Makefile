@@ -6,22 +6,20 @@
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 19:57:31 by iouardi           #+#    #+#              #
-#    Updated: 2022/12/09 14:20:10 by iouardi          ###   ########.fr        #
+#    Updated: 2022/12/09 17:04:26 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= 			convert
+NAME= 			base
 
 CPPFLAGS=			-Wall -Werror -Wextra -std=c++98
 
 CC=				c++
 
 SRC_FILES=		main.cpp \
-				Conversion.cpp
-
-
-HEADER_FILES=	Conversion.hpp
+				Base.cpp
 				
+HEADER_FILES=	Base.hpp				
 				
 OBJ_FILES=			$(SRC_FILES:.cpp=.o)
 
