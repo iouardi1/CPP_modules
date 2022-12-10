@@ -5,25 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/05 19:57:11 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/10 00:32:35 by iouardi          ###   ########.fr       */
+/*   Created: 2022/12/10 02:14:03 by iouardi           #+#    #+#             */
+/*   Updated: 2022/12/10 02:16:59 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
+#include "whatever.hpp"
 
-int main()
+int main( void ) 
 {
-	Base	*base = generate();
-	Base	basse;
-	Base		*a = new A;
-	B		b;
-	C		c;
-	identify(base);
-	std::cout << "********************************//\n";
-	identify(a);
-	identify(&b);
-	identify(&c);
-	std::cout << "********************************//\n";
-	identify(&basse);
+    int a = 2;
+    int b = 3;
+    ::swap( a, b );
+    std::cout << "a = " << a << ", b = " << b << std::endl;
+    std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+    std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+    std::string c = "chaine1";
+    std::string d = "chaine2";
+    ::swap(c, d);
+    std::cout << "c = " << c << ", d = " << d << std::endl;
+    std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+    std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+    return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 19:57:11 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/09 14:55:00 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/09 23:18:44 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int main()
 	raw = serialize(&ptr);
 	data = deserialize(raw);
 	std::cout << raw << std::endl;
-	std::cout << "--------------------------------" << std::endl;
+	std::cout << "--------------------------------//" << std::endl;
 	std::cout << data->i << std::endl;
 	std::cout << data->j << std::endl;
 	std::cout << data->c << std::endl;

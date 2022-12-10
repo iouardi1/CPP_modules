@@ -1,43 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/09 15:20:01 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/10 00:11:27 by iouardi          ###   ########.fr       */
+/*   Created: 2022/12/10 02:04:44 by iouardi           #+#    #+#             */
+/*   Updated: 2022/12/10 02:23:25 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-#define BASE_HPP
+#ifndef WHATEVER_HPP
+#define WHATEVER_HPP
+
 #include <iostream>
-#include <time.h>
+#include <string>
 
-class   Base
+template   <typename T>
+void  swap(T &a, T &b)
 {
-	public:
-		virtual ~Base();
-};
+    T   temp;
 
-class	A: public Base
+    temp = a;
+    a = b;
+    b = temp;
+}
+
+template   <typename T>
+T   &min(T &a, T &b)
 {
-	
-};
+    return (a < b ? a : b);
+}
 
-class	B: public Base
+template   <typename T>
+T   &max(T &a, T &b)
 {
-	
-};
-
-class	C: public Base
-{
-	
-};
-
-Base*	generate(void);
-void    identify(Base *p);
-void	identify(Base& p);
+    return (a > b ? a : b);
+}
 
 #endif
