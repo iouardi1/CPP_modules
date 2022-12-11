@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 02:26:53 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/10 02:31:36 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/11 19:50:13 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@
 #include <iostream>
 
 template <typename T>
-void    iter(T addr, T leng, T func)
+void    iter(T *arr, int leng, void (*func)(const T &))
 {
-    
+    for (int i = 0; i < leng; i++)
+        func(arr + i);
 }
 
 #endif
