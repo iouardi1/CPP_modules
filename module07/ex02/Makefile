@@ -6,20 +6,20 @@
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/11 21:20:38 by iouardi           #+#    #+#              #
-#    Updated: 2022/12/11 21:20:42 by iouardi          ###   ########.fr        #
+#    Updated: 2022/12/11 23:51:10 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= 			whatever
+NAME= 			array
 
 CPPFLAGS=			-Wall -Werror -Wextra -std=c++98
 
 CC=				c++
 
-SRC_FILES=		main.cpp
+SRC_FILES=		main.cpp \
 
 
-HEADER_FILES=	iter.hpp
+HEADER_FILES=	Array.hpp
 				
 				
 OBJ_FILES=			$(SRC_FILES:.cpp=.o)

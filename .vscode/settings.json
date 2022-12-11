@@ -66,5 +66,6 @@
         "stack": "cpp",
         "test": "cpp",
         "filesystem": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }
