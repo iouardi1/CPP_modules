@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/10 02:14:03 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/11 21:18:51 by iouardi          ###   ########.fr       */
+/*   Created: 2022/12/11 21:20:45 by iouardi           #+#    #+#             */
+/*   Updated: 2022/12/11 21:52:22 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
-// #include "string"
+#ifndef	ARRAY_HPP
+#define ARRAY_HPP
 
-template <typename T>
-void modifyArray(const T & str)
+#include <iostream>
+
+template   <typename T>
+class Array
 {
-	(void)str;
-	std::cout << "here we call our dear: "<< str << std::endl;
-}
+	public:
+		Array();
+		
+};
 
-void	setRandomValue( int &number )
-{
-	number = std::rand() % 100;
-}
 
-int main( void ) 
-{
-	const char arr[3] = {'a', 'b', 'c'};
-	int i =3;
-	iter(arr, i, modifyArray);
 
-	
-	return 0;
-}
+#endif
