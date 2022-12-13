@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 21:53:35 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/13 04:22:39 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/13 21:32:21 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ template <typename T>
 T& Array<T>::operator[](unsigned int i) const
 {
 	// std::cout << "subscript operator of Array is called" << std::endl;
-	if (i < 0 || i >= this->_size)
+	if (i >= this->_size)
 		throw Except();
 	return arr[i];
 }
