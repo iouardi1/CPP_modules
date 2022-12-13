@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 21:53:35 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/13 02:49:39 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/13 04:22:39 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,20 +34,24 @@ Array<T>::Array(unsigned int n)
 		throw Except();
 	this->_size = n;
 	this->arr = new T[n];
+	for (int i = 0; i < n; i++)
+		this->arr[i] = 0;
 	std::cout << "constructor of array is called" << std::endl;
 }
 
 template <typename T>
-Array<T>::Array(const Array& copy)
+Array<T>::Array(const Array& copy): arr(NULL)
 {
 	*this = copy;
 	std::cout << "Copy constructor of array is called" << std::endl;
 }
 
 template <typename T>
-Array<T>&	Array<T>::operator=(const Array& copy)
+Array<T>&	Array<T>::operator=(const Array& copy) const
 {
 	_size = copy._size;
+	if (arr)
+		delete[] arr;
 	arr = new T[(copy._size)];
 	for (unsigned int i = 0; i < copy._size; i++)
 		arr[i] = (copy.arr[i]);
@@ -62,7 +66,7 @@ unsigned int	Array<T>::size() const
 }
 
 template <typename T>
-T& Array<T>::operator[](unsigned int i)
+T& Array<T>::operator[](unsigned int i) const
 {
 	// std::cout << "subscript operator of Array is called" << std::endl;
 	if (i < 0 || i >= this->_size)
