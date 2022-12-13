@@ -65,7 +65,9 @@
         "fstream": "cpp",
         "stack": "cpp",
         "test": "cpp",
-        "filesystem": "cpp"
+        "filesystem": "cpp",
+        "list": "cpp",
+        "*.tpp": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

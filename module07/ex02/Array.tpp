@@ -6,11 +6,20 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 21:53:35 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/11 23:49:30 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/13 02:49:39 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
+
+
+template <typename T>
+Array<T>::~Array()
+{
+	if (arr)
+		delete [] arr;
+	std::cout << "destructor for array is called\n";
+}
 
 template <typename T>
 Array<T>::Array(): _size(0), arr(NULL)
@@ -19,10 +28,12 @@ Array<T>::Array(): _size(0), arr(NULL)
 }
 
 template <typename T>
-Array<T>::Array(unsigned int n): _size(n), arr(new T[n])
+Array<T>::Array(unsigned int n)
 {
-	// for (unsigned int i = 0; i < n; i++)
-	// 	arr[i] = 0;
+	if (n <= 0)
+		throw Except();
+	this->_size = n;
+	this->arr = new T[n];
 	std::cout << "constructor of array is called" << std::endl;
 }
 
@@ -53,6 +64,7 @@ unsigned int	Array<T>::size() const
 template <typename T>
 T& Array<T>::operator[](unsigned int i)
 {
+	// std::cout << "subscript operator of Array is called" << std::endl;
 	if (i < 0 || i >= this->_size)
 		throw Except();
 	return arr[i];
@@ -62,4 +74,16 @@ template <typename T>
 const char *Array<T>::Except::what() const throw()
 {
 	return ("index not valid");
+}
+
+template <typename T>
+void	Array<T>::setArr(const T& element, unsigned int i)
+{
+	arr[i] = element;
+}
+
+template <typename T>
+T& Array<T>::getArr(unsigned int i) const
+{
+	return arr[i];
 }
