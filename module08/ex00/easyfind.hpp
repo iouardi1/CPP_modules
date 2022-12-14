@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 03:36:25 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/14 17:34:40 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/14 19:32:01 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,6 @@ class Except: public std::exception
 const char * Except::what() const throw()
 {
 	return ("Element not found");
-}
-
-template <typename  T>
-std::ostream &operator<<(std::ostream &o, const typename T::const_iterator itr)
-{
-	o << itr << std::endl;
-	return o;
 }
 
 template <typename  T>
