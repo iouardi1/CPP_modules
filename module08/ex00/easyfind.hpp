@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 03:36:25 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/13 03:48:05 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/14 17:34:40 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,31 @@
 #define EASYFIND_HPP
 #include <iostream>
 
-template <typename  T>
 
-void    easyfind(T *a, int &i)
+class Except: public std::exception
 {
-    int j = 0;
-    while (a[j])
-        j++;
-    for (int k = 0; k < j; k++)
-        if (a[k] == i)
-            return a[k];
+	const char *what() const throw();
+};
+
+const char * Except::what() const throw()
+{
+	return ("Element not found");
+}
+
+template <typename  T>
+std::ostream &operator<<(std::ostream &o, const typename T::const_iterator itr)
+{
+	o << itr << std::endl;
+	return o;
+}
+
+template <typename  T>
+typename T::const_iterator   easyfind(const T &container, int i)
+{
+	typename T::const_iterator itr = std::find(container.begin(), container.end(), i);
+	if (itr == container.end())
+		throw Except();
+	return itr;
 }
 
 #endif

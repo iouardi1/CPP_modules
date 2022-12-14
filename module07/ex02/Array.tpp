@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 21:53:35 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/13 21:32:21 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/14 14:30:18 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Array<T>::Array(unsigned int n)
 		throw Except();
 	this->_size = n;
 	this->arr = new T[n];
-	for (int i = 0; i < n; i++)
+	for (unsigned int i = 0; i < n; i++)
 		this->arr[i] = 0;
 	std::cout << "constructor of array is called" << std::endl;
 }
@@ -47,7 +47,7 @@ Array<T>::Array(const Array& copy): arr(NULL)
 }
 
 template <typename T>
-Array<T>&	Array<T>::operator=(const Array& copy) const
+Array<T>&	Array<T>::operator=(const Array& copy)
 {
 	_size = copy._size;
 	if (arr)

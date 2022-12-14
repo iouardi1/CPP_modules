@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 02:26:53 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/11 21:17:53 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/14 14:36:20 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,16 @@
 #include <iostream>
 
 template <typename T>
-void    iter(T *arr, int leng, void (*func)(const T &))
+void    iter(const T *arr, size_t leng, void (*func)(const T &))
 {
-    for (int i = 0; i < leng; i++)
+    for (size_t i = 0; i < leng; i++)
         func(arr[i]);
 }
 
+template <typename T>
+void    iter(T *arr, size_t leng, void (*func)(T &))
+{
+    for (size_t i = 0; i < leng; i++)
+        func(arr[i]);
+}
 #endif

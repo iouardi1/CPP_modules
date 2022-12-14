@@ -6,14 +6,12 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 22:31:06 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/13 04:21:02 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/14 14:30:41 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 #include "Array.tpp"
-
-
 
 
 #define MAX_VAL 750
@@ -65,10 +63,9 @@ int main(int, char**)
     }
     delete [] mirror;//
     return 0;
+
+
 }
-
-
-
 
 // int	main( void )
 // {
