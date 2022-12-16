@@ -6,7 +6,7 @@
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/11 21:20:38 by iouardi           #+#    #+#              #
-#    Updated: 2022/12/11 23:51:10 by iouardi          ###   ########.fr        #
+#    Updated: 2022/12/16 21:26:52 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CPPFLAGS=			-Wall -Werror -Wextra -std=c++98
 
 CC=				c++
 
-SRC_FILES=		main.cpp \
+SRC_FILES=		main.cpp
 
 
 HEADER_FILES=	Array.hpp
