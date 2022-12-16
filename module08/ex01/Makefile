@@ -6,7 +6,7 @@
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/13 03:35:23 by iouardi           #+#    #+#              #
-#    Updated: 2022/12/13 03:36:19 by iouardi          ###   ########.fr        #
+#    Updated: 2022/12/16 14:02:38 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,13 @@ CPPFLAGS=			-Wall -Werror -Wextra -std=c++98
 
 CC=				c++
 
-SRC_FILES=		main.cpp
+SRC_FILES=		main.cpp \
+				span.cpp
 
 
-HEADER_FILES=	easyfind.hpp
+HEADER_FILES=	span.hpp
 				
-				
+
 OBJ_FILES=			$(SRC_FILES:.cpp=.o)
 
 all: $(NAME)

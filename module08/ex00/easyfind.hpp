@@ -6,14 +6,15 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 03:36:25 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/14 19:32:01 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/16 13:57:10 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EASYFIND_HPP
 #define EASYFIND_HPP
 #include <iostream>
-
+#include <queue>
+#include <stack>
 
 class Except: public std::exception
 {
@@ -26,12 +27,34 @@ const char * Except::what() const throw()
 }
 
 template <typename  T>
-typename T::const_iterator   easyfind(const T &container, int i)
+int	easyfind(const T &container, int i)
 {
 	typename T::const_iterator itr = std::find(container.begin(), container.end(), i);
 	if (itr == container.end())
 		throw Except();
-	return itr;
+	return (*itr);
+}
+
+int	easyfind(std::queue<int> q, int i)
+{
+	while (!q.empty() && q.front() != i)
+	{
+		q.pop();
+	}
+	if (q.empty())
+		throw Except();
+	return (q.front());
+}
+
+int	easyfind(std::stack<int> s, int i)
+{
+	while (!s.empty() && s.top() != i)
+	{
+		s.pop();
+	}
+	if (s.empty())
+		throw Except();
+	return (s.top());
 }
 
 #endif
