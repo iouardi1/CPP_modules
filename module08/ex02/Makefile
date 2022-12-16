@@ -6,7 +6,7 @@
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/13 03:35:23 by iouardi           #+#    #+#              #
-#    Updated: 2022/12/16 15:50:56 by iouardi          ###   ########.fr        #
+#    Updated: 2022/12/16 17:40:05 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,10 @@ CPPFLAGS=			-Wall -Werror -Wextra -std=c++98
 
 CC=				c++
 
-SRC_FILES=		main.cpp \
-				Span.cpp
+SRC_FILES=		main.cpp
 
 
-HEADER_FILES=	span.hpp
+HEADER_FILES=	MutantStack.hpp
 				
 
 OBJ_FILES=			$(SRC_FILES:.cpp=.o)
