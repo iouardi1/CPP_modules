@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 18:47:56 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/16 21:12:13 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/17 20:01:31 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class MutantStack: public std::stack<T>
 		MutantStack();
 		MutantStack(const MutantStack & copy);
 		virtual ~MutantStack();
-		MutantStack &operator=(const MutantStack & copy);
+		MutantStack<T> &operator=(const MutantStack<T> & copy);
 		
 		typedef typename MutantStack<T>::stack::container_type container_type;
 		typedef typename std::stack<T>::container_type::iterator iterator;
