@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 15:49:37 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/16 17:38:04 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/17 23:22:38 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main()
 	{
 		std::cout << e.what() << std::endl;
 	}
-	//
+	
 	try
 	{
 		Span sp = Span(10000);
@@ -55,7 +55,6 @@ int main()
 		for (unsigned int i = 0; i < 5000; i++)
 			v[i] = rand();
 	
-
 		Span sp = Span(5000);
 		sp.addNumber(v.begin(), v.end());
 		std::cout << sp.shortestSpan() << std::endl;

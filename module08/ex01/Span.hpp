@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   span.hpp                                           :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 14:14:50 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/16 17:23:58 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/17 22:33:39 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include <algorithm>
 #include <vector>
 
 class Span
@@ -35,8 +36,8 @@ class Span
 		void	addNumber(int n);
 		void	addNumber(std::vector<int>::const_iterator start, std::vector<int>::const_iterator end);
 		void	addNumber(std::vector<int>::iterator start, std::vector<int>::iterator end);
-		int		shortestSpan() const;
-		int 	longestSpan() const;
+		long	shortestSpan() const;
+		long	longestSpan() const;
 
 		std::vector<int> getVec() const;
 		

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   span.cpp                                           :+:      :+:    :+:   */
+/*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 14:15:41 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/16 17:31:40 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/17 23:22:08 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,58 +62,37 @@ void	Span::addNumber(std::vector<int>::iterator start, std::vector<int>::iterato
 	}
 }
 
-int	Span::shortestSpan() const
+long	Span::shortestSpan() const
 {
 	if (v.size() < 2)
 		throw Except();
 	
-	long dist1;
-	
-	if (v[0] > v[1])
-		dist1 = static_cast<long>(v[0] - (v[1]));
-	else 
-		dist1 = static_cast<long>(v[1] - v[0]);
+	std::vector<int> v1 = v;
+	std::sort(v1.begin(), v1.end());
 
-	for (unsigned int j = 1; j + 1 < v.size(); j++)
+	long	minDist = std::numeric_limits<int>::max();
+	std::vector<int>::iterator itr;
+	for (itr = v1.begin(); (itr + 1)!= v1.end(); itr++)
 	{
-		long dist2;
-	
-		if (v[j] > v[j + 1])
-			dist2 = static_cast<long>(v[j] - v[j + 1]);
-		else
-			dist2 = static_cast<long>(v[j + 1] - v[j]);
-
-		if (dist1 > dist2)
-			dist1 = dist2;
+		long	Dist = *(itr + 1) - *itr;
+		if (Dist < minDist)
+			minDist = Dist;
 	}
-	return dist1;
+
+	return minDist;
 }
 
-int	Span::longestSpan() const
+long	Span::longestSpan() const
 {
 	if (v.size() < 2)
 		throw Except();
-	
-	long dist1;
-	
-	if (v[0] > v[1])
-		dist1 = static_cast<long>(v[0] - (v[1]));
-	else 
-		dist1 = static_cast<long>(v[1] - v[0]);
 
-	for (unsigned int j = 1; j + 1 < v.size(); j++)
-	{
-		long dist2;
-	
-		if (v[j] > v[j + 1])
-			dist2 = static_cast<long>(v[j] - v[j + 1]);
-		else
-			dist2 = static_cast<long>(v[j + 1] - v[j]);
+	std::vector<int> v1 = v;
 
-		if (dist1 < dist2)
-			dist1 = dist2;
-	}
-	return dist1;
+	std::sort(v1.begin(), v1.end());
+	long dist = static_cast<long>(v1[v1.size() - 1] - v1[0]);
+
+	return dist;
 }
 
 std::vector<int> Span::getVec() const
