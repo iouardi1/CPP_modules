@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 18:57:01 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/17 23:47:27 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/18 01:40:18 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,25 +39,25 @@ MutantStack<T, container> &MutantStack<T, container>::operator=(const MutantStac
 }
 
 template <typename T, typename container>
-typename std::stack<T>::container_type::iterator	MutantStack<T, container>::begin()
+typename container::iterator	MutantStack<T, container>::begin()
 {
 	return (this->c.begin());
 }
 
 template <typename T, typename container>
-typename std::stack<T>::container_type::const_iterator 	MutantStack<T, container>::begin() const
+typename container::const_iterator 	MutantStack<T, container>::begin() const
 {
 	return (this->c.begin());
 }
 
 template <typename T, typename container>
-typename std::stack<T>::container_type::iterator	MutantStack<T, container>::end()
+typename container::iterator	MutantStack<T, container>::end()
 {
 	return (this->c.end());
 }
 
 template <typename T, typename container>
-typename std::stack<T>::container_type::const_iterator	MutantStack<T, container>::end() const
+typename container::const_iterator	MutantStack<T, container>::end() const
 {
 	return (this->c.end());
 }
