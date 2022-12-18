@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 14:15:41 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/17 23:22:08 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/18 16:01:12 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ long	Span::shortestSpan() const
 	std::vector<int>::iterator itr;
 	for (itr = v1.begin(); (itr + 1)!= v1.end(); itr++)
 	{
-		long	Dist = *(itr + 1) - *itr;
+		long	Dist = static_cast<long>(*(itr + 1)) - static_cast<long>(*itr);
 		if (Dist < minDist)
 			minDist = Dist;
 	}
@@ -90,12 +90,12 @@ long	Span::longestSpan() const
 	std::vector<int> v1 = v;
 
 	std::sort(v1.begin(), v1.end());
-	long dist = static_cast<long>(v1[v1.size() - 1] - v1[0]);
+	long dist = static_cast<long>(static_cast<long>(v1[v1.size() - 1]) - static_cast<long>(v1[0]));
 
 	return dist;
 }
 
-std::vector<int> Span::getVec() const
+std::vector<int>& Span::getVec() const
 {
 	return v;
 }

@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 15:49:37 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/17 23:22:38 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/18 15:10:31 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int main()
 		sp.addNumber(6);
 		sp.addNumber(3);
 		sp.addNumber(17);
-		sp.addNumber(9);
-		sp.addNumber(11);
+		sp.addNumber(-2147483648);
+		sp.addNumber(2147483647);
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
 	}

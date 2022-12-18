@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 14:14:50 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/17 22:33:39 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/18 16:01:03 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ class Span
 		long	shortestSpan() const;
 		long	longestSpan() const;
 
-		std::vector<int> getVec() const;
+		std::vector<int>& getVec() const;
 		
 };
