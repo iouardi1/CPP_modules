@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 14:15:41 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/18 16:01:12 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/19 20:19:42 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,15 @@ void	Span::addNumber(int n)
 	v.push_back(n);
 }
 
-
-void	Span::addNumber(std::vector<int>::iterator start, std::vector<int>::iterator end)
-{
-	for (std::vector<int>::iterator itr = start; itr != end; ++itr)
-	{
-		if (N == v.size())
-			throw Except();
-		v.push_back(*itr);
-	}
-}
+// void	Span::addNumber(typename iterator start, typename iterator end)
+// {
+// 	for (typename iterator itr = start; itr != end; ++itr)
+// 	{
+// 		if (N == v.size())
+// 			throw Except();
+// 		v.push_back(*itr);
+// 	}
+// }
 
 long	Span::shortestSpan() const
 {
@@ -93,9 +92,4 @@ long	Span::longestSpan() const
 	long dist = static_cast<long>(static_cast<long>(v1[v1.size() - 1]) - static_cast<long>(v1[0]));
 
 	return dist;
-}
-
-std::vector<int>& Span::getVec() const
-{
-	return v;
 }

@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 14:14:50 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/18 16:01:03 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/19 20:29:49 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <deque>
 
 class Span
 {
@@ -34,11 +35,21 @@ class Span
 		};
 		
 		void	addNumber(int n);
-		void	addNumber(std::vector<int>::const_iterator start, std::vector<int>::const_iterator end);
-		void	addNumber(std::vector<int>::iterator start, std::vector<int>::iterator end);
+		template <typename iterator>
+		void	addNumber(iterator start, iterator end)
+		{	
+			for (iterator itr = start; itr != end; ++itr)
+			{
+				if (N == v.size())
+					throw Except();
+				v.push_back(*itr);
+			}
+		}
+		// template <typename container>
+		// void	addNumber(typename container::iterator start, typename container::iterator end);
 		long	shortestSpan() const;
 		long	longestSpan() const;
 
-		std::vector<int>& getVec() const;
+		const std::vector<int>& getVec() const;
 		
 };

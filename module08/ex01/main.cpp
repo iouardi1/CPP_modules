@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 15:49:37 by iouardi           #+#    #+#             */
-/*   Updated: 2022/12/18 15:10:31 by iouardi          ###   ########.fr       */
+/*   Updated: 2022/12/19 20:36:17 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int main()
 		sp.addNumber(6);
 		sp.addNumber(3);
 		sp.addNumber(17);
-		sp.addNumber(-2147483648);
-		sp.addNumber(2147483647);
+		sp.addNumber(9);
+		sp.addNumber(11);
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
 	}
@@ -29,7 +29,7 @@ int main()
 	{
 		std::cout << e.what() << std::endl;
 	}
-	
+	//
 	try
 	{
 		Span sp = Span(10000);
@@ -48,15 +48,30 @@ int main()
 	//
 	try
 	{
-		std::vector<int> v;
-	
-		v.resize(5000);
+		std::vector<int> v(5000);
 
 		for (unsigned int i = 0; i < 5000; i++)
 			v[i] = rand();
 	
 		Span sp = Span(5000);
 		sp.addNumber(v.begin(), v.end());
+		std::cout << sp.shortestSpan() << std::endl;
+		std::cout << sp.longestSpan() << std::endl;
+	}
+	catch (const std::exception & e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	//
+	try
+	{
+		std::deque<int> q(5000);
+
+		for (unsigned int i = 0; i < 5000; i++)
+			q[i] = rand();
+	
+		Span sp = Span(5000);
+		sp.addNumber(q.begin(), q.end());
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
 	}
