@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 22:03:36 by iouardi           #+#    #+#             */
-/*   Updated: 2022/11/21 15:05:34 by iouardi          ###   ########.fr       */
+/*   Updated: 2023/01/08 02:18:01 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	 Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat(void) const
 {
-	return ((float)(this->i) / (1 << j));
+	return ((float)(this->i) / (1 << j));`
 }
 
 int	Fixed::toInt( void ) const
