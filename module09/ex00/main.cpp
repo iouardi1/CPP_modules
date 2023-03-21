@@ -6,25 +6,42 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 13:42:25 by iouardi           #+#    #+#             */
-/*   Updated: 2023/03/19 18:04:38 by iouardi          ###   ########.fr       */
+/*   Updated: 2023/03/21 22:48:21 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-int	parse_file(std::string	file)
+int	parse_line(std::string	line)
 {
-	
+	while (line.empty())
+	{
+		std::string	date;
+
+		if ((date = line.find_first_of("|") != std::string::npos))
+		{
+			if (date == line.find_last_not_of("|"))
+			{
+				
+			}
+			else
+				return 0;
+		}
+		else
+			return 0;
+	}
 }
 
-char**	split_line(std::string	line)
-{
+// char**	split_line(std::string	line)
+// {
 	
-}
+// }
 
 int	parse_first_line(std::string line)
 {
-	
+	if (line != "date | value")
+		return 0;
+	return 1;
 }
 
 int	fill_mapy(std::map<std::string, float>& mapy, char* av)
@@ -42,11 +59,11 @@ int	fill_mapy(std::map<std::string, float>& mapy, char* av)
 	std::getline(myfile, line);
 	if (!parse_first_line(line))
 		return 0;
-	while (!myfile.eof() && line.empty() && parse_file(line))
+	while (!myfile.eof() && line.empty() && parse_line(line))
 	{
 		std::getline(myfile, line);
 		char	**str = split_line(line);
-		
+
 		float	flo = std::stof(str[1]);
 		mapy.insert(std::make_pair(str[0], flo));
 	}
@@ -60,7 +77,7 @@ int main(int argc, char** argv)
 	{
 		std::map<std::string, float> mapy;
 
-		if (fill_mapy(mapy, argv[1]))
+		if (!fill_mapy(mapy, argv[1]))
 		{
 			std::cerr << "Error: Invalid argument" << std::endl;
 			exit(EXIT_FAILURE);
