@@ -6,13 +6,13 @@
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/27 22:22:06 by iouardi           #+#    #+#              #
-#    Updated: 2023/03/19 17:19:18 by iouardi          ###   ########.fr        #
+#    Updated: 2023/04/11 08:59:01 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= 			btc
 
-FLAGS=			-Wall -Werror -Wextra -std=c++98
+FLAGS=			-Wall -Werror -Wextra -std=c++98 -g -fsanitize=address
 
 CC=				c++
 
