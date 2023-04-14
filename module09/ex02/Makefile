@@ -5,21 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/04/14 00:49:00 by iouardi           #+#    #+#              #
-#    Updated: 2023/04/14 05:22:12 by iouardi          ###   ########.fr        #
+#    Created: 2023/04/14 05:30:15 by iouardi           #+#    #+#              #
+#    Updated: 2023/04/14 05:30:43 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= 			RPN
+NAME= 			PmergeMe
 
 FLAGS=			-Wall -Werror -Wextra -std=c++98
 
 CC=				c++
 
-SRC_FILES=		RPN.cpp \
+SRC_FILES=		PmergeMe.cpp \
 				main.cpp
 
-HEADER_FILES=	RPN.hpp
+HEADER_FILES=	PmergeMe.hpp
 
 OBJ_FILES=			$(SRC_FILES:.cpp=.o)
 
