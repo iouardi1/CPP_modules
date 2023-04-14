@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 20:45:07 by iouardi           #+#    #+#             */
-/*   Updated: 2023/04/11 10:39:50 by iouardi          ###   ########.fr       */
+/*   Updated: 2023/04/14 00:41:28 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,24 @@ void	btc::doMath(std::string	date, float	num)
 	std::cout << date << " => " << num << " = "  << res << std::endl;
 }
 
+int	numDots(std::string num)
+{
+	size_t	pos = 0;
+	size_t	count = 0;
+	while ((pos = num.find(".", pos + 1)) != std::string::npos)
+		count++;
+	return count;
+}
+
+int numPipes(std::string date)
+{
+	size_t	pos = 0;
+	size_t	count = 0;
+	while ((pos = date.find("|", pos + 1)) != std::string::npos)
+		count++;
+	return count;
+}
+
 void	btc::parseDate(std::string	date)
 {
 	if (date.length() > 13)
@@ -94,22 +112,24 @@ void	btc::parseDate(std::string	date)
 		std::string		datee = date.substr(0, 10);
 		std::string		num = date.substr(13);
 
-		if (date.substr(10, 3) != " | ")
-			std::cerr << "Error: bad input1 => " << datee << std::endl;
+		if (numPipes(date) != 1 || date.substr(10, 3) != " | ")
+			std::cerr << "Error: bad input => " << datee << std::endl;
 		else if (std::stoi(year) > 2022 || std::stoi(year) < 2009)
-			std::cerr << "Error: bad input2 => " << datee << std::endl;
+			std::cerr << "Error: bad input => " << datee << std::endl;
 		else if	(std::stoi(month) <= 0 || std::stoi(month) > 12)
-			std::cerr << "Error: bad input4 => " << datee << std::endl;
+			std::cerr << "Error: bad input => " << datee << std::endl;
 		else if ((month == "02") && (std::stoi(day) > 28 || std::stoi(day) <= 0))
-			std::cerr << "Error: bad input5 => " << datee << std::endl;
+			std::cerr << "Error: bad input => " << datee << std::endl;
 		else if (std::stoi(day) > 31 || std::stoi(day) <= 0)
-			std::cerr << "Error: bad input6 => " << datee << std::endl;
+			std::cerr << "Error: bad input => " << datee << std::endl;
+		else if (numDots(num) != 1 && numDots(num) != 0)
+			std::cerr << "Error: bad input => " << datee << std::endl;
 		else if (std::stof(num) < 0)
 			std::cerr << "Error: not a positive number." << std::endl;
 		else if (std::stof(num) > 1000)
-			std::cerr << "Error: too large a number." << std::endl;
+			std::cerr << "Error: too large number." << std::endl;
 		else if (numTirre(date) != 2)
-			std::cerr << "Error: bad input3 => " << datee << std::endl;
+			std::cerr << "Error: bad input => " << datee << std::endl;
 		else
 			doMath(datee, std::stof(num));
 	}
@@ -150,7 +170,8 @@ void	btc::parseFile(char *str)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		// std::cerr << e.what() << '\n';
+		std::cout << "Error: bad input"  << std::endl;
 	}
 	
 }
