@@ -6,13 +6,13 @@
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/14 05:30:15 by iouardi           #+#    #+#              #
-#    Updated: 2023/04/14 05:30:43 by iouardi          ###   ########.fr        #
+#    Updated: 2023/04/15 08:09:19 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= 			PmergeMe
 
-FLAGS=			-Wall -Werror -Wextra -std=c++98
+FLAGS=			-Wall -Werror -Wextra -std=c++98 -g -fsanitize=address
 
 CC=				c++
 
