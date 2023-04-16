@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 05:30:07 by iouardi           #+#    #+#             */
-/*   Updated: 2023/04/15 11:01:23 by iouardi          ###   ########.fr       */
+/*   Updated: 2023/04/16 22:13:11 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,46 +79,42 @@ void	PmergeMe::insertion_sort(int start, int end)
         int j = i - 1;
         while (j >= start && vec1[j] > key)
 		{
-            vec1[j+1] = vec1[j];
+            vec1[j + 1] = vec1[j];
             j--;
         }
-        vec1[j+1] = key;
+        vec1[j + 1] = key;
     }
 }
 
-void	PmergeMe::merge_lists()
+void	PmergeMe::merge_lists(int start)
 {
-    std::list<int>::iterator iter_left = left.begin();
-    std::list<int>::iterator iter_right = right.begin();
-    int i = 0;
-    while (iter_left != left.end() && iter_right != right.end())
+	int i = start;
+	while (!left.empty() && !right.empty())
 	{
-        if (*iter_left < *iter_right)
+		if (left.front() < right.front())
 		{
-            // vec2[i] = *iter_left;
-            vec2.push_back(*iter_left);
-            iter_left++;
-        }
+			vec2[i] = left.front();
+			left.pop_front();
+		}
 		else
 		{
-            // vec2[i] = *iter_right;
-            vec2.push_back(*iter_right);
-            iter_right++;
-        }
-        i++;
-    }
-    while (iter_left != left.end())
+			vec2[i] = right.front();
+			right.pop_front();
+		}
+		i++;
+	}
+	while (!left.empty())
 	{
-        vec2.push_back(*iter_left);
-        iter_left++;
-        i++;
-    }
-    while (iter_right != right.end())
+		vec2[i] = left.front();
+		left.pop_front();
+		i++;
+	}
+	while (!right.empty())
 	{
-        vec2.push_back(*iter_right);
-        iter_right++;
-        i++;
-    }
+		vec2[i] = right.front();
+		right.pop_front();
+		i++;
+	}
 }
 
 void	PmergeMe::merge_insert_sorted(int start, int end)
@@ -138,12 +134,10 @@ void	PmergeMe::merge_insert_sorted(int start, int end)
 
         for (int i = mid; i < end; i++)
             right.push_back(vec1[i]);
-		std::vector<int>	tmp(size);
-		this->vec2 = tmp;
-        merge_lists();
-		// vec1.clear();
+		this->vec2.resize(vec1.size());
+        merge_lists(start);
         for (int i = start; i < end; i++)
-            vec1[i] = vec2[i - start];
+            vec1[i] = vec2[i];
     }
 }
 
