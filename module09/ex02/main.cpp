@@ -24,12 +24,12 @@ int main(int ac, char **av)
         mimi.merge_insert_sorted_vec(0, size - 1);
         mimi.merge_insert_sorted_list(mimi.get_list1().begin(), mimi.get_list1().end());
         std::cout << "After: ";
-        // for (int i = 0 ; i < size ; i++)
-        //     std::cout << mimi.get_list1()[i] << " ";
-        // std::cout << std::endl;
-        for (std::list<int> i = mimi.get_list1().begin() ; i < mimi.get_list1().end() ; i++)
-            std::cout << *i << " ";
+        for (int i = 0 ; i < size ; i++)
+            std::cout << mimi.get_vec1()[i] << " ";
         std::cout << std::endl;
+        // for (std::list<int>::iterator i = mimi.get_list1().begin() ; i != mimi.get_list1().end() ; i++)
+        //     std::cout << *i << " ";
+        // std::cout << std::endl;
     }
     else
     {
