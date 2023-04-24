@@ -18,12 +18,17 @@ int main(int ac, char **av)
     {
         PmergeMe    mimi;
 
-        mimi.parse_fill_container(ac, av);
+        mimi.parse_fill_vec(ac, av);
+        mimi.parse_fill_list(ac, av);
         int size = mimi.get_vec1().size();
-        mimi.merge_insert_sorted(0, size);
+        mimi.merge_insert_sorted_vec(0, size - 1);
+        mimi.merge_insert_sorted_list(mimi.get_list1().begin(), mimi.get_list1().end());
         std::cout << "After: ";
-        for (int i = 0 ; i < size ; i++)
-            std::cout << mimi.get_vec1()[i] << " ";
+        // for (int i = 0 ; i < size ; i++)
+        //     std::cout << mimi.get_list1()[i] << " ";
+        // std::cout << std::endl;
+        for (std::list<int> i = mimi.get_list1().begin() ; i < mimi.get_list1().end() ; i++)
+            std::cout << *i << " ";
         std::cout << std::endl;
     }
     else

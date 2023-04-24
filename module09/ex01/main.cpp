@@ -23,3 +23,5 @@ int main(int ac, char **av)
 	
 	str.parse_and_calculate(av[1]);
 }
+
+// *check numbers that are not seperated by whitespace * //
