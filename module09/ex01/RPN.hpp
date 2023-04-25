@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 00:50:04 by iouardi           #+#    #+#             */
-/*   Updated: 2023/04/25 18:00:32 by iouardi          ###   ########.fr       */
+/*   Updated: 2023/04/25 20:13:26 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class   RPN
 
 	public:
 		void	parse_and_calculate(std::string	str);
-		void	doMath(char tocken);
+		void	doMath();
 		int 	tockenIsValid(char tocken);
 		
 };

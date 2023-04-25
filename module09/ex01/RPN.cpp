@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 02:40:25 by iouardi           #+#    #+#             */
-/*   Updated: 2023/04/25 18:00:58 by iouardi          ###   ########.fr       */
+/*   Updated: 2023/04/25 20:21:34 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,48 +46,49 @@ int RPN::tockenIsValid(char tocken)
 	return 0;
 }
 
-void	RPN::doMath(char tocken)
+void	RPN::doMath()
 {
-	int		tmp = elements.top();
-
-	elements.pop();
-	int		res;
-	if (tocken == '+')
-		res = elements.top() + tmp;
-	else if (tocken == '-')
-		res = elements.top() - tmp;
-	else if (tocken == '*')
-		res = elements.top() * tmp;
-	else if (tocken == '/' && tmp != 0)
-		res = elements.top() / tmp;
-	else if (tocken == ' ')
-		return ;
-	else
+	int  i = 0;
+	
+	while (elements.size() >= 2 && oper.size() >= 1)
 	{
-		std::cout << "Error" << std::endl;
-		exit (-1);
+		int		tmp = elements.top();
+		char	tocken = oper.top();
+	
+		elements.pop();
+		oper.pop();
+		int		res;
+		if (tocken == '+')
+			res = tmp + elements.top();
+		else if (tocken == '-')
+			res = tmp - elements.top();
+		else if (tocken == '*')
+			res = tmp * elements.top();
+		else if (tocken == '/' && elements.top() != 0)
+			res = tmp / elements.top();
+		elements.pop();
+		elements.push(res);
 	}
-	elements.pop();
-	elements.push(res);
+	std::cout << elements.top() << std::endl;
 }
 
 void	RPN::parse_and_calculate(std::string str)
 {
-	int i = 0;
+	int i = 1;
 
-	while (str[i])
+	while (str.length() - i >= 0)
 	{
-		if (tockenIsValid(str[i]))
+		if (tockenIsValid(str[str.length() - i]))
 		{
-			if (tockenIsValid(str[i]) == 1 && elements.size() < 2)
+			if (tockenIsValid(str[str.length() - i]) == 1)
 			{
 				std::string tmp;
-				tmp += str[i];
+				tmp += str[str.length() - i];
 				this->elements.push(std::stoi(tmp));
 			}
-			else if (tockenIsValid(str[i]) == 2 && elements.size() == 2)
-				doMath(str[i]);
-			else if (tockenIsValid(str[i]) == 3)
+			else if (tockenIsValid(str[str.length() - i]) == 2)
+				this->oper.push(str[str.length() - i]);
+			else if (tockenIsValid(str[str.length() - i]) == 3)
 			{
 				i++;
 				continue ;
@@ -97,6 +98,8 @@ void	RPN::parse_and_calculate(std::string str)
 				std::cout << "Error" << std::endl;
 				exit (-1);
 			}
+			if (i == str.length())
+				break ;
 			i++;
 		}
 		else
@@ -105,6 +108,11 @@ void	RPN::parse_and_calculate(std::string str)
 			exit (-1);
 		}
 	}
-	std::cout << elements.top() << std::endl;
-
+	if (oper.size() + 1 == elements.size())
+		doMath();
+	else
+	{
+		std::cout << "Error" << std::endl;
+		exit (-1);
+	}
 }

@@ -6,13 +6,13 @@
 #    By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/14 00:49:00 by iouardi           #+#    #+#              #
-#    Updated: 2023/04/14 05:22:12 by iouardi          ###   ########.fr        #
+#    Updated: 2023/04/25 19:22:01 by iouardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= 			RPN
 
-FLAGS=			-Wall -Werror -Wextra -std=c++98
+FLAGS=			-Wall -Werror -Wextra -std=c++98 -g -fsanitize=address
 
 CC=				c++
 
