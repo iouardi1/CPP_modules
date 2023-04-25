@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 03:05:13 by iouardi           #+#    #+#             */
-/*   Updated: 2023/04/14 05:26:33 by iouardi          ###   ########.fr       */
+/*   Updated: 2023/04/25 17:58:50 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,3 @@ int main(int ac, char **av)
 	
 	str.parse_and_calculate(av[1]);
 }
-
-// *check numbers that are not seperated by whitespace * //

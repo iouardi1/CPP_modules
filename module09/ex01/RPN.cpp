@@ -6,13 +6,13 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 02:40:25 by iouardi           #+#    #+#             */
-/*   Updated: 2023/04/25 15:59:44 by iouardi          ###   ########.fr       */
+/*   Updated: 2023/04/25 18:00:58 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
 
-RPN::RPN(): oper(""), elements()
+RPN::RPN(): oper(), elements()
 {
 
 }
@@ -107,29 +107,4 @@ void	RPN::parse_and_calculate(std::string str)
 	}
 	std::cout << elements.top() << std::endl;
 
-	
-	// std::string					tocken;
-	// std::istringstream			stream(str);
-
-	// while (std::getline(stream, tocken, ' '))
-	// {
-	// 	if (tockenIsValid(tocken))
-	// 	{
-	// 		if (tockenIsValid(tocken) == 1 && elements.size() < 2)
-	// 			this->elements.push(std::stoi(tocken));
-	// 		else if (tockenIsValid(tocken) == 2 && elements.size() == 2)
-	// 			doMath(tocken);
-	// 		else
-	// 		{
-	// 			std::cout << "Error" << std::endl;
-	// 			exit (-1);
-	// 		}
-	// 	}
-	// 	else
-	// 	{
-	// 		std::cout << "Error" << std::endl;
-	// 		exit (-1);
-	// 	}
-	// }
-	// std::cout << elements.top() << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 20:45:07 by iouardi           #+#    #+#             */
-/*   Updated: 2023/04/14 00:41:28 by iouardi          ###   ########.fr       */
+/*   Updated: 2023/04/25 17:56:35 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,18 @@ int numPipes(std::string date)
 	return count;
 }
 
+int	notvalid(std::string num)
+{
+	int	i = 0;
+	while (num[i])
+	{
+		if (!isdigit(num[i]) && num[i] != '.')
+			return 1;
+		i++;
+	}
+	return 0;
+}
+
 void	btc::parseDate(std::string	date)
 {
 	if (date.length() > 13)
@@ -122,7 +134,7 @@ void	btc::parseDate(std::string	date)
 			std::cerr << "Error: bad input => " << datee << std::endl;
 		else if (std::stoi(day) > 31 || std::stoi(day) <= 0)
 			std::cerr << "Error: bad input => " << datee << std::endl;
-		else if (numDots(num) != 1 && numDots(num) != 0)
+		else if (notvalid(num) || (numDots(num) != 1 && numDots(num) != 0))
 			std::cerr << "Error: bad input => " << datee << std::endl;
 		else if (std::stof(num) < 0)
 			std::cerr << "Error: not a positive number." << std::endl;
@@ -135,10 +147,8 @@ void	btc::parseDate(std::string	date)
 	}
 	else if (date.length() >= 10)
 		std::cerr << "Error: bad input => " << date.substr(0, 10) << std::endl;
-	else
+	else if (date.length() < 10 && date != "")
 		std::cerr << "Error: bad input" << std::endl;
-		
-
 }
 
 void	btc::parseFile(char *str)
@@ -154,14 +164,14 @@ void	btc::parseFile(char *str)
 			exit(EXIT_FAILURE);
 		}
 		std::string line;
-		std::getline(myfile, line);
-		if (line != "date | value")
+		int		flag = 0;
+		while (std::getline(myfile, line, '\n'))
 		{
-			std::cerr << "Error: bad input" << std::endl;
-			exit(EXIT_FAILURE);
-		}
-		while (std::getline(myfile, line))
-		{
+			if (!flag && line == "date | value")
+			{
+				flag = 1;
+				continue ;
+			}
 			parseDate(line);
 			line.erase(line.begin(), line.end());
 		}

@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 00:50:04 by iouardi           #+#    #+#             */
-/*   Updated: 2023/04/25 15:48:44 by iouardi          ###   ########.fr       */
+/*   Updated: 2023/04/25 18:00:32 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 class   RPN
 {
 	private:
-		std::string					oper;
+		std::stack<char>			oper;
 		std::stack<int>				elements;
 
 	public:
@@ -42,8 +42,3 @@ class   RPN
 
 
 #endif
-
-
-// stack1		stack2		temp
-// 9X			9*8			9
-// 8
