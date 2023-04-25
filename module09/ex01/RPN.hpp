@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 00:50:04 by iouardi           #+#    #+#             */
-/*   Updated: 2023/04/14 05:06:39 by iouardi          ###   ########.fr       */
+/*   Updated: 2023/04/25 15:48:44 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class   RPN
 {
 	private:
 		std::string					oper;
-		std::stack<int>		elements;
+		std::stack<int>				elements;
 
 	public:
 		RPN();
@@ -33,8 +33,8 @@ class   RPN
 
 	public:
 		void	parse_and_calculate(std::string	str);
-		void	doMath(std::string tocken);
-		int 	tockenIsValid(std::string tocken);
+		void	doMath(char tocken);
+		int 	tockenIsValid(char tocken);
 		
 };
 

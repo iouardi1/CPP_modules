@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 05:30:07 by iouardi           #+#    #+#             */
-/*   Updated: 2023/04/16 22:13:11 by iouardi          ###   ########.fr       */
+/*   Updated: 2023/04/25 14:06:51 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,49 +149,69 @@ void	PmergeMe::parse_fill_list(int ac, char **av)
 	}
 }
 
-void	PmergeMe::insertion_sort_list(std::list<int>::iterator start, std::list<int>::iterator end)
+// void	PmergeMe::insertion_sort_list(std::list<int>::iterator start, std::list<int>::iterator end)
+// {
+// 	for (std::list<int>::iterator i = start; i != end; ++i)
+// 	{
+//         std::list<int>::iterator j = i;
+//         while (j != start && *j < *(j--))
+// 		{
+//             // std::iter_swap(j, j--);
+// 			std::swap(*j, *(--j));
+// 			// j--;
+//         }
+//     }
+// }
+
+void	PmergeMe::merge(std::list<int>& left, std::list<int>& right, std::list<int>& result)
 {
-	for (std::list<int>::iterator i = start; i != end; ++i)
+    while (!left.empty() && !right.empty())
 	{
-        std::list<int>::iterator j = i;
-        while (j != start && *j < *(j--))
+        if (left.front() <= right.front())
 		{
-            std::iter_swap(j, j--);
+            result.push_back(left.front());
+            left.pop_front();
         }
+        else
+		{
+            result.push_back(right.front());
+            right.pop_front();
+        }
+    }
+    while (!left.empty())
+	{
+        result.push_back(left.front());
+        left.pop_front();
+    }
+    while (!right.empty())
+	{
+        result.push_back(right.front());
+        right.pop_front();
     }
 }
 
-void	PmergeMe::merge_insert_sorted_list(std::list<int>::iterator start, std::list<int>::iterator end)
+void	PmergeMe::merge_insert_sorted_list(std::list<int> &lst)
 {
-	if (std::distance(start, end) <= 16)
-		insertion_sort_list(start, end);
-	else
+	if (lst.size() > 1) 
 	{
-		std::list<int>::iterator mid = start;
-		std::advance(mid, std::distance(start, end) / 2);
-
-		merge_insert_sorted_list(start, mid);
-		merge_insert_sorted_list(mid, end);
-
-		std::list<int> temp;
-		std::list<int>::iterator i = start, j = mid;
-
-		while (i != mid && j != end)
+        std::list<int> left, right, result;
+        int mid = lst.size() / 2;
+        std::list<int>::iterator it = lst.begin();
+        for (int i = 0; i < mid; ++i)
 		{
-			if (*i < *j)
-				temp.push_back(*i++);
-			else
-				temp.push_back(*j++);
-		}
-
-		while (i != mid)
-			temp.push_back(*i++);
-
-		while (j != end)
-			temp.push_back(*j++);
-
-		std::copy(temp.begin(), temp.end(), start);
-	}
+            left.push_back(*it);
+            ++it;
+        }
+        for (int i = mid; i < lst.size(); ++i)
+		{
+            right.push_back(*it);
+            ++it;
+        }
+        merge_insert_sorted_list(left);
+        merge_insert_sorted_list(right);
+        merge(left, right, result);
+        lst = result;
+    }
 }
 
 std::list<int>&	PmergeMe::get_list1()
