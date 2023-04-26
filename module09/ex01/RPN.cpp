@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 02:40:25 by iouardi           #+#    #+#             */
-/*   Updated: 2023/04/25 20:21:34 by iouardi          ###   ########.fr       */
+/*   Updated: 2023/04/26 19:02:59 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	RPN::parse_and_calculate(std::string str)
 			{
 				std::string tmp;
 				tmp += str[str.length() - i];
-				this->elements.push(std::stoi(tmp));
+				this->elements.push(std::atoi(tmp.c_str()));
 			}
 			else if (tockenIsValid(str[str.length() - i]) == 2)
 				this->oper.push(str[str.length() - i]);

@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 05:41:30 by iouardi           #+#    #+#             */
-/*   Updated: 2023/04/25 15:29:45 by iouardi          ###   ########.fr       */
+/*   Updated: 2023/04/26 19:13:29 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(int ac, char **av)
 {
-	if (ac >= 2 && ac <= 3001)
+	if (ac >= 2)
 	{
 		PmergeMe    mimi;
 		
@@ -38,7 +38,7 @@ int main(int ac, char **av)
 	}
 	else
 	{
-		std::cout << "Please enter a valid argument1." << std::endl;
+		std::cout << "Please enter a valid argument ." << std::endl;
 		return 1;
 	}
 }

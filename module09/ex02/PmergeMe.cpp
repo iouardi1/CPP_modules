@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 05:30:07 by iouardi           #+#    #+#             */
-/*   Updated: 2023/04/25 14:06:51 by iouardi          ###   ########.fr       */
+/*   Updated: 2023/04/26 19:14:17 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void PmergeMe::parse_fill_vec(int ac, char **av)
 				}
 				j++;
 			}
-			vec1.push_back(std::stoi(av[i]));
+			vec1.push_back(std::atoi(av[i]));
 			i++;
 		}
 	}
@@ -138,7 +138,7 @@ void	PmergeMe::parse_fill_list(int ac, char **av)
 				}
 				j++;
 			}
-			list1.push_back(std::stoi(av[i]));
+			list1.push_back(std::atoi(av[i]));
 			i++;
 		}
 	}
@@ -148,20 +148,6 @@ void	PmergeMe::parse_fill_list(int ac, char **av)
 		exit (EXIT_FAILURE);
 	}
 }
-
-// void	PmergeMe::insertion_sort_list(std::list<int>::iterator start, std::list<int>::iterator end)
-// {
-// 	for (std::list<int>::iterator i = start; i != end; ++i)
-// 	{
-//         std::list<int>::iterator j = i;
-//         while (j != start && *j < *(j--))
-// 		{
-//             // std::iter_swap(j, j--);
-// 			std::swap(*j, *(--j));
-// 			// j--;
-//         }
-//     }
-// }
 
 void	PmergeMe::merge(std::list<int>& left, std::list<int>& right, std::list<int>& result)
 {

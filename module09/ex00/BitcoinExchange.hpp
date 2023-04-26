@@ -6,13 +6,14 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 13:34:14 by iouardi           #+#    #+#             */
-/*   Updated: 2023/04/11 10:29:23 by iouardi          ###   ########.fr       */
+/*   Updated: 2023/04/26 17:08:28 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BITCOINEXCHANGE_HPP
 #define BITCOINEXCHANGE_HPP
 #include <iostream>
+#include <cstdlib>
 #include <fstream>
 #include <string>
 #include <map>
@@ -20,7 +21,6 @@
 class btc
 {
 	private:
-		// std::map<std::string, float>                mapy;
 		std::map<long, float>                		mapy;
 		std::string                                 fileName;
 	

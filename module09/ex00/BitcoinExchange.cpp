@@ -6,7 +6,7 @@
 /*   By: iouardi <iouardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 20:45:07 by iouardi           #+#    #+#             */
-/*   Updated: 2023/04/25 17:56:35 by iouardi          ###   ########.fr       */
+/*   Updated: 2023/04/26 18:52:44 by iouardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ btc::btc(std::string	fileName)
 		while (std::getline(myfile, line))
 		{
 			std::string		str(line.substr(0, 4) + line.substr(5, 2) + line.substr(8, 2));
-			this->mapy.insert(std::make_pair(std::stol(str), std::stof(line.substr(11))));
+			this->mapy.insert(std::make_pair(std::strtod(str.c_str(), NULL), std::strtod(line.substr(11).c_str(), NULL)));
 			line.erase(line.begin(), line.end());
 		}
 		myfile.close();
@@ -76,8 +76,8 @@ size_t	btc::numTirre(std::string date)
 void	btc::doMath(std::string	date, float	num)
 {
 	std::map<long, float>			mapyy(this->mapy);
-	std::string		str(date.substr(0, 4) + date.substr(5, 2) + date.substr(8, 2));
-	std::map<long, float>::iterator	it = mapyy.upper_bound(std::stol(str));
+	std::string						str(date.substr(0, 4) + date.substr(5, 2) + date.substr(8, 2));
+	std::map<long, float>::iterator	it = mapyy.upper_bound(std::strtod(str.c_str(), NULL));
 	if (it != mapyy.begin())
 		--it;
 	float	res = it->second * num;
@@ -107,17 +107,35 @@ int	notvalid(std::string num)
 	int	i = 0;
 	while (num[i])
 	{
-		if (!isdigit(num[i]) && num[i] != '.')
+		if (!isdigit(num[i]) && num[i] != '.' && num[i] != '-')
 			return 1;
 		i++;
 	}
 	return 0;
 }
 
+int commaExists(std::string date)
+{
+	std::string::iterator it;
+	if ((it = find(date.begin() + 13, date.end(), ',')) != date.end())
+		return	1;
+	return 0;
+}
+
+void	convert_commas_to_dots(std::string &date)
+{
+    size_t pos = 0;
+    while ((pos = date.find(',', pos + 1)) != std::string::npos)
+        date.replace(pos, 1, ".");
+}
+
 void	btc::parseDate(std::string	date)
 {
 	if (date.length() > 13)
 	{
+		if (commaExists(date))
+			convert_commas_to_dots(date);
+		
 		std::string		year = date.substr(0, 4);
 		std::string		month = date.substr(5, 2);
 		std::string		day = date.substr(8, 2);
@@ -126,24 +144,24 @@ void	btc::parseDate(std::string	date)
 
 		if (numPipes(date) != 1 || date.substr(10, 3) != " | ")
 			std::cerr << "Error: bad input => " << datee << std::endl;
-		else if (std::stoi(year) > 2022 || std::stoi(year) < 2009)
+		else if (std::atoi(year.c_str()) > 2022 || std::atoi(year.c_str()) < 2009)
 			std::cerr << "Error: bad input => " << datee << std::endl;
-		else if	(std::stoi(month) <= 0 || std::stoi(month) > 12)
+		else if	(std::atoi(month.c_str()) <= 0 || std::atoi(month.c_str()) > 12)
 			std::cerr << "Error: bad input => " << datee << std::endl;
-		else if ((month == "02") && (std::stoi(day) > 28 || std::stoi(day) <= 0))
+		else if ((month == "02") && (std::atoi(day.c_str()) > 28 || std::atoi(day.c_str()) <= 0))
 			std::cerr << "Error: bad input => " << datee << std::endl;
-		else if (std::stoi(day) > 31 || std::stoi(day) <= 0)
+		else if (std::atoi(day.c_str()) > 31 || std::atoi(day.c_str()) <= 0)
 			std::cerr << "Error: bad input => " << datee << std::endl;
 		else if (notvalid(num) || (numDots(num) != 1 && numDots(num) != 0))
 			std::cerr << "Error: bad input => " << datee << std::endl;
-		else if (std::stof(num) < 0)
+		else if (std::strtod(num.c_str(), NULL) < 0)
 			std::cerr << "Error: not a positive number." << std::endl;
-		else if (std::stof(num) > 1000)
+		else if (std::strtod(num.c_str(), NULL) > 1000)
 			std::cerr << "Error: too large number." << std::endl;
 		else if (numTirre(date) != 2)
 			std::cerr << "Error: bad input => " << datee << std::endl;
 		else
-			doMath(datee, std::stof(num));
+			doMath(datee, std::strtod(num.c_str(), NULL));
 	}
 	else if (date.length() >= 10)
 		std::cerr << "Error: bad input => " << date.substr(0, 10) << std::endl;
@@ -180,7 +198,6 @@ void	btc::parseFile(char *str)
 	}
 	catch(const std::exception& e)
 	{
-		// std::cerr << e.what() << '\n';
 		std::cout << "Error: bad input"  << std::endl;
 	}
 	
